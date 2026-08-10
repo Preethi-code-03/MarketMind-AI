@@ -1,0 +1,2921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketMind AI - Analyse. Discover. Decide.</title>
+  <!-- Google Fonts: Space Grotesk for tech look, Plus Jakarta Sans for UI body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+
+  <!-- Background Ambient Glows -->
+  <div class="ambient-glows">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+  </div>
+
+  <!-- Sidebar mobile drawer backdrop overlay -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- 1. SPLASH SCREEN -->
+  <section id="splash-screen" class="view-screen active">
+    <div class="splash-content">
+      <div class="logo-container">
+        <!-- Glowing Futuristic Logo -->
+        <svg class="splash-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="splashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00f0ff" />
+              <stop offset="50%" stop-color="#3b82f6" />
+              <stop offset="100%" stop-color="#a855f7" />
+            </linearGradient>
+            <filter id="splashGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="8" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          <!-- Stylized Isometric AI Market Grid and Trend Nodes -->
+          <path d="M20 70 L40 45 L60 55 L80 30" stroke="url(#splashGrad)" stroke-width="5" stroke-linecap="round"
+            stroke-linejoin="round" filter="url(#splashGlow)" class="draw-path" />
+          <path d="M20 70 L40 58 L60 68 L80 43" stroke="rgba(0, 240, 255, 0.2)" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" stroke-dasharray="4,4" />
+          <circle cx="20" cy="70" r="5" fill="#00f0ff" filter="url(#splashGlow)" class="pulse-node" />
+          <circle cx="40" cy="45" r="5" fill="#00f0ff" filter="url(#splashGlow)" class="pulse-node" />
+          <circle cx="60" cy="55" r="5" fill="#3b82f6" filter="url(#splashGlow)" class="pulse-node" />
+          <circle cx="80" cy="30" r="6" fill="#a855f7" filter="url(#splashGlow)" class="pulse-node" />
+        </svg>
+      </div>
+      <h1 class="splash-brand">MarketMind <span class="accent-text">AI</span></h1>
+      <p class="splash-tagline">Analyse. Discover. Decide.</p>
+      <div class="splash-loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. LOGIN / SIGN UP SCREEN -->
+  <section id="auth-screen" class="view-screen">
+    <div class="auth-container">
+
+      <!-- Left side: Brand Showcase (Hidden on small mobile screens) -->
+      <div class="auth-showcase">
+        <div class="showcase-content">
+          <div class="brand-logo-small">
+            <svg viewBox="0 0 100 100" fill="none" class="mini-logo">
+              <path d="M20 70 L40 45 L60 55 L80 30" stroke="url(#splashGrad)" stroke-width="5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="20" cy="70" r="5" fill="#00f0ff" />
+              <circle cx="40" cy="45" r="5" fill="#00f0ff" />
+              <circle cx="60" cy="55" r="5" fill="#3b82f6" />
+              <circle cx="80" cy="30" r="6" fill="#a855f7" />
+            </svg>
+            <span class="brand-title">MarketMind <span>AI</span></span>
+          </div>
+
+          <h2 class="showcase-header">Next-Generation Market Intelligence</h2>
+          <p class="showcase-desc">Leverage advanced generative AI and multi-agent market simulations to identify
+            profitable business opportunities.</p>
+
+          <!-- Abstract interactive neural graph simulation visual -->
+          <div class="neon-card visual-card">
+            <div class="radar-scan"></div>
+            <div class="card-pulse-node position-1"></div>
+            <div class="card-pulse-node position-2"></div>
+            <div class="card-pulse-node position-3"></div>
+
+            <div class="visual-stat">
+              <span class="stat-lbl">AI Accuracy</span>
+              <span class="stat-val font-space">94.8%</span>
+              <span class="stat-trend green">+1.2% this week</span>
+            </div>
+
+            <svg class="visual-graph" viewBox="0 0 200 80">
+              <defs>
+                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3"></stop>
+                  <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M 0,60 Q 25,30 50,45 T 100,20 T 150,55 T 200,10" fill="none" stroke="#00f0ff" stroke-width="3"
+                filter="drop-shadow(0px 2px 8px rgba(0, 240, 255, 0.4))"></path>
+              <path d="M 0,60 Q 25,30 50,45 T 100,20 T 150,55 T 200,10 L 200,80 L 0,80 Z" fill="url(#chartGrad)"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Interaction Form -->
+      <div class="auth-form-card">
+        <div class="form-tabs">
+          <button id="tab-login" class="tab-btn active">Sign In</button>
+          <button id="tab-signup" class="tab-btn">Sign Up</button>
+        </div>
+
+        <!-- Login Form View -->
+        <div id="login-form-view" class="form-view active">
+          <div class="form-header">
+            <h3>Welcome Back</h3>
+            <p>Access your AI business intelligence dashboard and insights.</p>
+          </div>
+
+          <div class="social-auth-buttons">
+            <button class="btn btn-social btn-google">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.76 12.27c0-.86-.08-1.68-.22-2.48H12v4.69h6.6c-.28 1.5-1.13 2.76-2.39 3.61v3h3.86c2.26-2.08 3.56-5.14 3.56-8.82zM12 24c3.24 0 5.96-1.08 7.95-2.91l-3.86-3c-1.08.72-2.45 1.16-4.09 1.16-3.15 0-5.81-2.13-6.76-5l-3.99 3.1A11.96 11.96 0 0012 24zm-6.76-11.75a7.2 7.2 0 010-2.5l-3.99-3.1a11.96 11.96 0 000 8.7l3.99-3.1zm6.76-5.06c1.76 0 3.34.6 4.59 1.8l3.44-3.44C17.95 2.1 15.24 1 12 1 7.37 1 3.4 3.65 1.25 7.56l3.99 3.1c.95-2.87 3.61-5 6.76-5z" />
+              </svg>
+              Continue with Google
+            </button>
+            <button class="btn btn-social btn-email-direct">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              Continue with Password
+            </button>
+          </div>
+
+          <div class="divider">
+            <span>or use email</span>
+          </div>
+
+          <form id="login-form" class="auth-form" onsubmit="event.preventDefault();">
+            <div class="input-group">
+              <label for="login-email">Email Address</label>
+              <div class="input-wrapper">
+                <input type="email" id="login-email" placeholder="name@company.com" required>
+                <span class="input-glow"></span>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div class="label-row">
+                <label for="login-password">Password</label>
+                <a href="#" class="form-link">Forgot password?</a>
+              </div>
+              <div class="input-wrapper">
+                <input type="password" id="login-password" placeholder="••••••••" required>
+                <span class="input-glow"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              Sign In to Dashboard
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Signup Form View (hidden initially) -->
+        <div id="signup-form-view" class="form-view">
+          <div class="form-header">
+            <h3>Create Account</h3>
+            <p>Start discovering business opportunities in minutes.</p>
+          </div>
+
+          <div class="social-auth-buttons">
+            <button class="btn btn-social btn-google">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.76 12.27c0-.86-.08-1.68-.22-2.48H12v4.69h6.6c-.28 1.5-1.13 2.76-2.39 3.61v3h3.86c2.26-2.08 3.56-5.14 3.56-8.82zM12 24c3.24 0 5.96-1.08 7.95-2.91l-3.86-3c-1.08.72-2.45 1.16-4.09 1.16-3.15 0-5.81-2.13-6.76-5l-3.99 3.1A11.96 11.96 0 0012 24zm-6.76-11.75a7.2 7.2 0 010-2.5l-3.99-3.1a11.96 11.96 0 000 8.7l3.99-3.1zm6.76-5.06c1.76 0 3.34.6 4.59 1.8l3.44-3.44C17.95 2.1 15.24 1 12 1 7.37 1 3.4 3.65 1.25 7.56l3.99 3.1c.95-2.87 3.61-5 6.76-5z" />
+              </svg>
+              Sign Up with Google
+            </button>
+          </div>
+
+          <div class="divider">
+            <span>or create credentials</span>
+          </div>
+
+          <form id="signup-form" class="auth-form" onsubmit="event.preventDefault();">
+            <div class="input-group">
+              <label for="signup-name">Full Name</label>
+              <div class="input-wrapper">
+                <input type="text" id="signup-name" placeholder="John Doe" required>
+                <span class="input-glow"></span>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="signup-email">Email Address</label>
+              <div class="input-wrapper">
+                <input type="email" id="signup-email" placeholder="name@company.com" required>
+                <span class="input-glow"></span>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="signup-password">Create Password</label>
+              <div class="input-wrapper">
+                <input type="password" id="signup-password" placeholder="At least 8 characters" required>
+                <span class="input-glow"></span>
+              </div>
+            </div>
+
+            <div class="terms-row">
+              <input type="checkbox" id="signup-terms" required>
+              <label for="signup-terms">I agree to the <a href="#" class="form-link">Terms of Service</a> & <a href="#"
+                  class="form-link">Privacy Policy</a></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              Generate Free Workspace
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <div class="auth-footer">
+          <p class="auth-toggle-hint">Already have an account? <span id="toggle-to-signin" class="form-link-action">Sign
+              In</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HOME DASHBOARD (SIMULATED VIEW) -->
+  <section id="dashboard-screen" class="view-screen">
+    <div class="dashboard-layout">
+
+      <!-- Sidebar navigation -->
+      <aside class="dash-sidebar">
+        <div class="sidebar-brand">
+          <svg class="mini-logo" viewBox="0 0 100 100" fill="none">
+            <path d="M20 70 L40 45 L60 55 L80 30" stroke="url(#splashGrad)" stroke-width="6" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="20" cy="70" r="5" fill="#00f0ff" />
+            <circle cx="40" cy="45" r="5" fill="#00f0ff" />
+            <circle cx="60" cy="55" r="5" fill="#3b82f6" />
+            <circle cx="80" cy="30" r="6" fill="#a855f7" />
+          </svg>
+          <span class="brand-text">MarketMind <span>AI</span></span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active" data-nav="home">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="9" />
+              <rect x="14" y="3" width="7" height="5" />
+              <rect x="14" y="12" width="7" height="9" />
+              <rect x="3" y="16" width="7" height="5" />
+            </svg>
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="nav-item" data-nav="signals">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+            <span>New Market Analysis</span>
+          </a>
+          <a href="#" class="nav-item" data-nav="opportunities">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+            <span>Business Opportunities</span>
+          </a>
+          <a href="#" class="nav-item" data-nav="reports">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <circle cx="9" cy="9" r="1" />
+            </svg>
+            <span>Saved Reports</span>
+          </a>
+          <a href="#" class="nav-item" data-nav="insights">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4" />
+              <path d="M12 8h.01" />
+            </svg>
+            <span>AI Insights</span>
+          </a>
+          <a href="#" class="nav-item" data-nav="trends">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 20V10M12 20V4M6 20v-6" />
+            </svg>
+            <span>Market Trends</span>
+          </a>
+          <a href="#" class="nav-item" data-nav="settings">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+            <span>Settings</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-user-footer">
+          <div class="user-avatar-wrap">
+            <div class="user-avatar">MM</div>
+            <div class="user-info">
+              <span class="user-name">Preet Patel</span>
+              <span class="user-status">Premium Tier</span>
+            </div>
+          </div>
+          <button id="btn-logout" class="btn-logout" title="Log Out">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="logout-icon">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Dashboard Frame -->
+      <main class="dash-frame">
+
+        <!-- Header Bar -->
+        <header class="dash-header">
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle Navigation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="menu-icon">
+              <line x1="3" y1="12" x2="21" y2="12" class="line-mid"></line>
+              <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+              <line x1="3" y1="18" x2="21" y2="18" class="line-bot"></line>
+            </svg>
+          </button>
+
+          <div class="header-search">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" placeholder="Search a business type or location...">
+          </div>
+
+          <div class="header-actions">
+            <!-- AI Health Monitoring Indicator -->
+            <div class="ai-status-indicator">
+              <span class="pulse-dot"></span>
+              <span class="status-lbl"><strong class="green">🟢 AI Agents Online</strong></span>
+            </div>
+
+            <button class="header-notification-btn" aria-label="Notifications">
+              <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+              <span class="notif-badge">3</span>
+            </button>
+
+            <div class="header-profile-wrap">
+              <img class="header-profile-pic"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100"
+                alt="Preet Patel">
+            </div>
+          </div>
+        </header>
+
+        <!-- Dynamic Page View Container -->
+        <div class="dash-scrollable-content">
+
+          <!-- SUB-VIEW 1: DASHBOARD OVERVIEW -->
+          <div id="view-dashboard" class="dashboard-subview">
+
+            <!-- Welcome Section -->
+            <section class="welcome-banner">
+              <div class="welcome-meta">
+                <h1>Good evening, Preet</h1>
+                <p>Discover profitable business opportunities using AI-powered market research and competitor
+                  intelligence.</p>
+              </div>
+              <div class="welcome-cta">
+                <button class="btn btn-primary btn-sparkle" id="run-ai-scan">
+                  <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                  </svg>
+                  Start New Analysis
+                </button>
+              </div>
+            </section>
+
+            <!-- Row 1: Dashboard Analytics Widgets -->
+            <section class="stats-grid">
+
+              <div class="neon-card stat-item">
+                <div class="stat-card-header">
+                  <span class="stat-card-label">Market Opportunity Score</span>
+                  <span class="stat-card-percent-change green" id="dash-opportunity-level">Excellent</span>
+                </div>
+                <h3 class="stat-card-number font-space" id="dash-opportunity-score">89 <span class="lbl-small">/
+                    100</span></h3>
+                <div class="mini-chart-wrapper">
+                  <svg class="spark-line" viewBox="0 0 100 25">
+                    <path d="M 0,20 L 15,15 L 30,18 L 45,8 L 60,12 L 75,5 L 100,2" fill="none" stroke="#00f0ff"
+                      stroke-width="2"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="neon-card stat-item">
+                <div class="stat-card-header">
+                  <span class="stat-card-label">Nearby Competitors</span>
+                  <span class="stat-card-percent-change" id="dash-competitor-level" style="color: #f59e0b;">Medium
+                    Competition</span>
+                </div>
+                <h3 class="stat-card-number font-space" id="dash-competitor-count">8 <span
+                    class="lbl-small">Businesses</span></h3>
+                <div class="stat-bar-container">
+                  <div class="stat-bar-fill progress-cyan" id="dash-competitor-bar"
+                    style="width: 55%; background-color: #f59e0b; box-shadow: 0 0 6px #f59e0b;"></div>
+                </div>
+              </div>
+
+              <div class="neon-card stat-item">
+                <div class="stat-card-header">
+                  <span class="stat-card-label">Customer Demand</span>
+                  <span class="stat-card-percent-change green" id="dash-demand-badge">High Demand</span>
+                </div>
+                <h3 class="stat-card-number font-space" id="dash-demand-level">High</h3>
+                <div class="stat-bar-container">
+                  <div class="stat-bar-fill progress-cyan" id="dash-demand-bar" style="width: 80%;"></div>
+                </div>
+              </div>
+
+              <div class="neon-card stat-item">
+                <div class="stat-card-header">
+                  <span class="stat-card-label">AI Confidence</span>
+                  <span class="stat-card-percent-change green" id="dash-confidence-badge">95%</span>
+                </div>
+                <h3 class="stat-card-number font-space" id="dash-confidence-pct">95%</h3>
+                <span class="stat-lbl"
+                  style="font-size: 0.75rem; margin-top: auto; color: var(--text-muted);">Recommendation
+                  Confidence</span>
+              </div>
+
+            </section>
+
+            <!-- Row 2: Charts and AI Intelligence Panel -->
+            <section class="visuals-grid">
+
+              <!-- Large Trend Chart Container -->
+              <div class="neon-card chart-container-card">
+                <div class="card-header-actions">
+                  <div class="card-title-group">
+                    <h4>Market Demand Trend</h4>
+                    <p>Shows demand patterns for the selected business category across time</p>
+                  </div>
+                  <div class="timeframe-toggles">
+                    <button class="tf-btn">Weekly</button>
+                    <button class="tf-btn active">Monthly</button>
+                    <button class="tf-btn">Yearly</button>
+                  </div>
+                </div>
+
+                <div class="main-chart-canvas">
+                  <!-- Glowing Market Chart SVG -->
+                  <svg class="chart-canvas-svg" viewBox="0 0 600 220" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="chartLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#00f0ff" />
+                        <stop offset="60%" stop-color="#3b82f6" />
+                        <stop offset="100%" stop-color="#a855f7" />
+                      </linearGradient>
+                      <linearGradient id="chartFillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.25" />
+                        <stop offset="100%" stop-color="#121212" stop-opacity="0" />
+                      </linearGradient>
+                    </defs>
+
+                    <!-- Grid Lines -->
+                    <line x1="0" y1="40" x2="600" y2="40" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+                    <line x1="0" y1="90" x2="600" y2="90" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+                    <line x1="0" y1="140" x2="600" y2="140" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+                    <line x1="0" y1="190" x2="600" y2="190" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+                    <!-- Projected/Actual Area Fill -->
+                    <path d="M 0,160 Q 75,130 150,150 T 300,90 T 450,120 T 600,60 L 600,220 L 0,220 Z"
+                      fill="url(#chartFillGrad)" />
+
+                    <!-- Projected path line -->
+                    <path d="M 0,160 Q 75,130 150,150 T 300,90 T 450,120 T 600,60" fill="none"
+                      stroke="url(#chartLineGrad)" stroke-width="3" stroke-linecap="round" />
+
+                    <!-- Forecast dotted extension -->
+                    <path d="M 600,60 L 650,45" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="4,4" />
+
+                    <!-- Dot markers -->
+                    <circle cx="300" cy="90" r="5" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"
+                      filter="drop-shadow(0 0 6px #3b82f6)" />
+                    <circle cx="600" cy="60" r="5" fill="#a855f7" stroke="#ffffff" stroke-width="1.5"
+                      filter="drop-shadow(0 0 6px #a855f7)" />
+                  </svg>
+                </div>
+
+                <div class="chart-y-axis-labels">
+                  <span class="y-label">Week 1</span>
+                  <span class="y-label">Week 2</span>
+                  <span class="y-label">Week 3</span>
+                  <span class="y-label">Week 4</span>
+                  <span class="y-label">Projected Trend</span>
+                </div>
+              </div>
+
+              <!-- Nearby Business Insights list -->
+              <div class="neon-card insight-list-card">
+                <div class="card-header-actions">
+                  <div class="card-title-group">
+                    <h4>Nearby Business Insights</h4>
+                    <p>Competitor sentiment and review ratings</p>
+                  </div>
+                  <span class="pulse-beacon">Live Stream</span>
+                </div>
+
+                <div class="signals-stream" id="dash-insights-stream">
+
+                  <div class="signal-card-item signal-buy">
+                    <div class="signal-token">
+                      <span class="token-sym">Cream World</span>
+                      <span class="token-name">Dessert Parlor</span>
+                    </div>
+                    <div class="signal-direction">
+                      <span class="badge badge-buy">⭐ 4.6</span>
+                      <span class="signal-confidence">950 Reviews</span>
+                    </div>
+                    <div class="signal-price">
+                      <strong>₹180</strong>
+                      <span class="green">350 m away</span>
+                    </div>
+                  </div>
+
+                  <div class="signal-card-item signal-buy" style="border-left: 3px solid var(--accent-blue);">
+                    <div class="signal-token">
+                      <span class="token-sym">Fresh Juice Hub</span>
+                      <span class="token-name">Beverages</span>
+                    </div>
+                    <div class="signal-direction">
+                      <span class="badge badge-buy"
+                        style="background: rgba(59, 130, 246, 0.12); color: var(--accent-blue);">⭐ 4.4</span>
+                      <span class="signal-confidence">720 Reviews</span>
+                    </div>
+                    <div class="signal-price">
+                      <strong>₹90</strong>
+                      <span class="green" style="color: var(--accent-blue);">600 m away</span>
+                    </div>
+                  </div>
+
+                  <div class="signal-card-item signal-buy">
+                    <div class="signal-token">
+                      <span class="token-sym">Protein Egg Point</span>
+                      <span class="token-name">Quick Service</span>
+                    </div>
+                    <div class="signal-direction">
+                      <span class="badge badge-buy">⭐ 4.8</span>
+                      <span class="signal-confidence">540 Reviews</span>
+                    </div>
+                    <div class="signal-price">
+                      <strong>₹120</strong>
+                      <span class="green">900 m away</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </section>
+
+            <!-- Row 3: Quick Insights Panel -->
+            <section class="quick-insights-section" style="margin-bottom: 2rem;">
+              <div class="neon-card quick-insights-card">
+                <div class="card-header-actions">
+                  <div class="card-title-group">
+                    <h4>Quick Insights Summary</h4>
+                    <p>AI aggregate recommendations for the selected local market segment</p>
+                  </div>
+                </div>
+                <div class="insights-grid">
+
+                  <div class="insight-item-card">
+                    <div class="insight-icon-wrap icon-cyan">
+                      <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="7" />
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                      </svg>
+                    </div>
+                    <div class="insight-meta">
+                      <span class="insight-lbl">Best Recommendation</span>
+                      <strong class="insight-val">Gourmet Dessert Parlor</strong>
+                    </div>
+                  </div>
+
+                  <div class="insight-item-card">
+                    <div class="insight-icon-wrap icon-blue">
+                      <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
+                    </div>
+                    <div class="insight-meta">
+                      <span class="insight-lbl">Expected Traffic</span>
+                      <strong class="insight-val">1,200+ Weekly</strong>
+                    </div>
+                  </div>
+
+                  <div class="insight-item-card">
+                    <div class="insight-icon-wrap icon-purple">
+                      <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                    </div>
+                    <div class="insight-meta">
+                      <span class="insight-lbl">Estimated Demand Level</span>
+                      <strong class="insight-val">Very High</strong>
+                    </div>
+                  </div>
+
+                  <div class="insight-item-card">
+                    <div class="insight-icon-wrap icon-orange">
+                      <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
+                    </div>
+                    <div class="insight-meta">
+                      <span class="insight-lbl">Market Saturation</span>
+                      <strong class="insight-val">Low (2 Direct)</strong>
+                    </div>
+                  </div>
+
+                  <div class="insight-item-card">
+                    <div class="insight-icon-wrap icon-green">
+                      <svg class="insight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                        <polyline points="17 6 23 6 23 12" />
+                      </svg>
+                    </div>
+                    <div class="insight-meta">
+                      <span class="insight-lbl">Growth Potential</span>
+                      <strong class="insight-val">18% YoY Est.</strong>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+            <!-- Row 3.5: Geographic Market Map -->
+            <section class="map-analysis-section" style="margin-bottom: 2rem;">
+              <div class="neon-card map-card"
+                style="padding: 2rem; border-radius: 16px; background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.06); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+                <div class="card-header-actions"
+                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                  <div class="card-title-group">
+                    <h4 class="font-space neon-text-purple"
+                      style="color: var(--accent-purple); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 0.25rem 0;">
+                      📍 Geographic Market Map</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Real-time spatial distribution of
+                      direct competitors, landmarks, and demographic density heatmaps</p>
+                  </div>
+                  <div class="map-legend" style="display: flex; gap: 1.2rem; font-size: 0.8rem; flex-wrap: wrap;">
+                    <span class="legend-item"
+                      style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary);"><span
+                        class="legend-dot user-dot"
+                        style="width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: var(--accent-cyan); box-shadow: 0 0 6px var(--accent-cyan);"></span>
+                      Recommended Spot</span>
+                    <span class="legend-item"
+                      style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary);"><span
+                        class="legend-dot competitor-dot"
+                        style="width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: #ef4444; box-shadow: 0 0 6px #ef4444;"></span>
+                      Competitors</span>
+                    <span class="legend-item"
+                      style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary);"><span
+                        class="legend-dot landmark-dot"
+                        style="width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: #a855f7; box-shadow: 0 0 6px #a855f7;"></span>
+                      Landmarks</span>
+                  </div>
+                </div>
+                <div class="interactive-map-container" id="real-google-map"
+                  style="width: 100%; height: 420px; border-radius: 12px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); background: #121216;">
+                  <div class="map-loading-placeholder"
+                    style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; color: var(--text-muted);">
+                    <div class="glow-spinner"
+                      style="width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.03); border-top-color: var(--accent-cyan); border-radius: 50%; animation: spin 1s linear infinite;">
+                    </div>
+                    <span class="font-space" style="font-size: 0.9rem;">Initializing Google Maps canvas...</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Row 4: Competitor Analysis Table -->
+            <section class="table-container-section">
+              <div class="neon-card table-card">
+                <div class="card-header-actions">
+                  <div class="card-title-group">
+                    <h4>Competitor Analysis</h4>
+                    <p>Comprehensive algorithmic ratings for local competitor business operators</p>
+                  </div>
+                  <div class="table-search-box">
+                    <input type="text" placeholder="Filter competitor data...">
+                  </div>
+                </div>
+
+                <div class="table-scroll-wrapper">
+                  <table class="dash-table">
+                    <thead>
+                      <tr>
+                        <th>Business Name</th>
+                        <th>Category</th>
+                        <th>Rating</th>
+                        <th>Reviews</th>
+                        <th>Average Price</th>
+                        <th>Distance</th>
+                        <th>Competition Level</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dash-competitors-tbody">
+                      <tr>
+                        <td>
+                          <div class="asset-identity">
+                            <span class="asset-logo logo-tsla"
+                              style="background: linear-gradient(135deg, #00f0ff, #3b82f6);">B</span>
+                            <div>
+                              <strong>Bake & Brew Cafe</strong>
+                              <p>Premium Coffee Shop</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>Cafe & Bakery</td>
+                        <td><span class="rating-bar-num font-space">⭐ 4.5</span></td>
+                        <td>480</td>
+                        <td>₹220</td>
+                        <td>400 m</td>
+                        <td><span class="prediction-status-badge bearish">High</span></td>
+                        <td>
+                          <button class="btn btn-outline btn-tbl-act">View Analysis</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="asset-identity">
+                            <span class="asset-logo logo-amzn"
+                              style="background: linear-gradient(135deg, #a855f7, #3b82f6);">C</span>
+                            <div>
+                              <strong>Chai Chaska Point</strong>
+                              <p>Local Tea Stall Franchise</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>Quick Service Tea</td>
+                        <td><span class="rating-bar-num font-space">⭐ 4.2</span></td>
+                        <td>320</td>
+                        <td>₹45</td>
+                        <td>650 m</td>
+                        <td><span class="prediction-status-badge moderate">Medium</span></td>
+                        <td>
+                          <button class="btn btn-outline btn-tbl-act">View Analysis</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="asset-identity">
+                            <span class="asset-logo logo-nflx"
+                              style="background: linear-gradient(135deg, #10b981, #00f0ff);">H</span>
+                            <div>
+                              <strong>Healthy Bites Salads</strong>
+                              <p>Fitness Diet Cafe</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>Health Food</td>
+                        <td><span class="rating-bar-num font-space">⭐ 4.7</span></td>
+                        <td>150</td>
+                        <td>₹280</td>
+                        <td>1.2 km</td>
+                        <td><span class="prediction-status-badge bullish">Low</span></td>
+                        <td>
+                          <button class="btn btn-outline btn-tbl-act">View Analysis</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+          </div><!-- End view-dashboard -->
+
+          <!-- SUB-VIEW 2: NEW MARKET ANALYSIS (DEFAULT AFTER LOGIN) -->
+          <div id="view-new-analysis" class="dashboard-subview active">
+
+            <section class="analysis-welcome-section">
+              <h2 class="analysis-main-header font-space">Start Your Market Analysis</h2>
+              <p class="analysis-main-subheader">Tell us about your business idea or let AI recommend the best
+                opportunity.</p>
+            </section>
+
+            <!-- Goal Selection (Section 1) -->
+            <section class="analysis-section">
+              <h3 class="analysis-section-title">1. Choose your goal</h3>
+              <div class="goals-grid">
+
+                <div class="neon-card goal-card active" id="goal-has-idea">
+                  <div class="goal-checkmark">✓</div>
+                  <div class="goal-icon">💡</div>
+                  <div class="goal-meta">
+                    <h4 class="font-space">I already have a Business Idea</h4>
+                    <p>Analyse my business in a selected location.</p>
+                  </div>
+                </div>
+
+                <div class="neon-card goal-card" id="goal-suggest-idea">
+                  <div class="goal-checkmark">✓</div>
+                  <div class="goal-icon">🤖</div>
+                  <div class="goal-meta">
+                    <h4 class="font-space">Suggest a Business Idea</h4>
+                    <p>Recommend the best business based on my location and budget.</p>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- Business Information (Section 2) -->
+            <section class="analysis-section">
+              <h3 class="analysis-section-title">2. Business Information</h3>
+
+              <div class="analysis-grid-layout">
+
+                <!-- Left: Form Card -->
+                <div class="neon-card form-card">
+                  <form id="market-analysis-form" class="analysis-form" onsubmit="event.preventDefault();">
+
+                    <!-- Business Type (AI-powered Smart Search) -->
+                    <div class="input-group" id="group-business-type" style="position: relative;">
+                      <label for="analysis-business-type-search">Business Type</label>
+                      <div class="input-wrapper search-wrapper">
+                        <span class="search-input-icon">🔍</span>
+                        <input type="text" id="analysis-business-type-search"
+                          placeholder="Describe your business idea..." autocomplete="off"
+                          style="padding-left: 2.6rem; border-radius: 12px;">
+                        <span class="input-glow"></span>
+                      </div>
+
+                      <!-- Quick Suggestion Tags -->
+                      <div class="search-suggestions-examples"
+                        style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 0.2rem; user-select: none;">
+                        Suggestions:
+                        <span class="suggestion-tag"
+                          style="color: var(--accent-cyan); cursor: pointer; transition: color 0.2s ease;">Ice Cream
+                          Shop</span> •
+                        <span class="suggestion-tag"
+                          style="color: var(--accent-cyan); cursor: pointer; transition: color 0.2s ease;">Bakery</span>
+                        •
+                        <span class="suggestion-tag"
+                          style="color: var(--accent-cyan); cursor: pointer; transition: color 0.2s ease;">Organic
+                          Juice</span> •
+                        <span class="suggestion-tag"
+                          style="color: var(--accent-cyan); cursor: pointer; transition: color 0.2s ease;">Photography</span>
+                        •
+                        <span class="suggestion-tag"
+                          style="color: var(--accent-cyan); cursor: pointer; transition: color 0.2s ease;">Tea
+                          Stall</span>
+                      </div>
+
+                      <!-- Hidden input element instead of native select to maintain app compatibility -->
+                      <input type="hidden" id="analysis-business-type" value="">
+
+                      <!-- Floating Suggestions Panel -->
+                      <div class="smart-suggestions-panel" id="business-suggestions-panel">
+                        <!-- Loaded dynamically via JS -->
+                      </div>
+                    </div>
+
+                    <!-- Location Options -->
+                    <div class="input-group">
+                      <label>Location</label>
+                      <div class="location-toggles-container">
+                        <button type="button" class="btn location-toggle-btn active" id="loc-current">
+                          📍 Use Current Location
+                        </button>
+                        <button type="button" class="btn location-toggle-btn" id="loc-search">
+                          📌 Search Any City / Area
+                        </button>
+                      </div>
+                      <div class="input-wrapper search-loc-input-wrapper" style="display: none; margin-top: 0.8rem;">
+                        <input type="text" id="analysis-location-search"
+                          placeholder="Enter city name or locality (e.g. Indiranagar, Bengaluru)">
+                        <span class="input-glow"></span>
+                      </div>
+                    </div>
+
+                    <!-- Budget Slider -->
+                    <div class="input-group">
+                      <div class="label-row">
+                        <label for="analysis-budget">Budget Cap</label>
+                        <span class="budget-display-val font-space" id="budget-val-lbl">₹25,00,000</span>
+                      </div>
+                      <div class="budget-slider-wrapper">
+                        <input type="range" id="analysis-budget" min="50000" max="5000000" step="50000" value="2500000">
+                        <div class="slider-limit-labels">
+                          <span>₹50,000</span>
+                          <span>₹50,00,000</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Business Size -->
+                    <div class="input-group">
+                      <label>Business Size</label>
+                      <div class="size-segmented-control">
+                        <input type="radio" name="business-size" id="size-small" value="Small" checked>
+                        <label for="size-small">Small</label>
+
+                        <input type="radio" name="business-size" id="size-medium" value="Medium">
+                        <label for="size-medium">Medium</label>
+
+                        <input type="radio" name="business-size" id="size-large" value="Large">
+                        <label for="size-large">Large</label>
+
+                        <span class="segmented-control-bg"></span>
+                      </div>
+                    </div>
+
+                    <!-- Target Customers (Optional) -->
+                    <div class="input-group">
+                      <label for="custom-target-trigger">Target Customers <span
+                          style="font-size: 0.75rem; color: var(--text-muted); font-weight: normal;">(Optional)</span></label>
+
+                      <!-- Hidden input element instead of native select to maintain app compatibility -->
+                      <input type="hidden" id="analysis-target-customers" value="">
+
+                      <!-- Custom Searchable Multi-Select Dropdown UI -->
+                      <div class="custom-searchable-dropdown multi-select" id="target-customers-dropdown">
+                        <div class="dropdown-trigger" id="custom-target-trigger" tabindex="0"
+                          style="border-radius: 12px;">
+                          <span class="trigger-text" id="trigger-display-text"
+                            style="color: var(--text-muted); font-size: 0.95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex-grow: 1; text-align: left;">Select
+                            Target Customers</span>
+                          <span class="trigger-arrow" style="font-size: 0.8rem; color: var(--text-muted);">▼</span>
+                        </div>
+                        <div class="dropdown-menu" style="border-radius: 16px;">
+                          <div class="dropdown-search-wrapper">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" class="dropdown-search-input" placeholder="Search target audience..."
+                              autocomplete="off">
+                          </div>
+                          <div class="dropdown-options-list">
+                            <div class="dropdown-option" data-value="General Public">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">👥</span>
+                              <span class="option-text">General Public</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Students">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">🎓</span>
+                              <span class="option-text">Students</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Office Employees">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">💼</span>
+                              <span class="option-text">Office Employees</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Fitness Enthusiasts">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">🏋️</span>
+                              <span class="option-text">Fitness Enthusiasts</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Families">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">👨‍👩‍👧‍👦</span>
+                              <span class="option-text">Families</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Parents with Kids">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">👶</span>
+                              <span class="option-text">Parents with Kids</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Hospital Visitors">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">🏥</span>
+                              <span class="option-text">Hospital Visitors</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Shoppers">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">🛍️</span>
+                              <span class="option-text">Shoppers</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Tourists">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">✈️</span>
+                              <span class="option-text">Tourists</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Food Lovers">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">🍔</span>
+                              <span class="option-text">Food Lovers</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Senior Citizens">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">👴</span>
+                              <span class="option-text">Senior Citizens</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Daily Commuters">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">🚆</span>
+                              <span class="option-text">Daily Commuters</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Women">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">👩</span>
+                              <span class="option-text">Women</span>
+                            </div>
+                            <div class="dropdown-option" data-value="Men">
+                              <span class="option-checkbox"></span>
+                              <span class="option-icon">👨</span>
+                              <span class="option-text">Men</span>
+                            </div>
+                          </div>
+                          <!-- Dropdown Footer with Clear and Done buttons -->
+                          <div class="dropdown-footer">
+                            <button type="button" class="btn-clear-all" id="btn-clear-target">Clear All</button>
+                            <button type="button" class="btn-done" id="btn-done-target">Done</button>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="input-glow"></span>
+                    </div>
+
+                    <!-- Bottom Section (Actions) -->
+                    <div class="analysis-submit-row">
+                      <button type="submit" class="btn btn-primary btn-submit btn-glow-purple" id="btn-analyse-market">
+                        🚀 Analyse Market
+                      </button>
+                      <span class="analysis-time-disclaimer">This analysis may take 20–30 seconds.</span>
+                    </div>
+
+                  </form>
+                </div>
+
+                <!-- Right: AI Preview Panel -->
+                <div class="neon-card ai-preview-panel">
+
+                  <div class="preview-header-meta">
+                    <h4 class="font-space neon-text-purple">🤖 Real-Time AI Preview</h4>
+                    <p class="preview-description">Live synthesis based on your inputs</p>
+                  </div>
+
+                  <!-- Summary Parameters -->
+                  <div class="preview-inputs-summary">
+                    <div class="preview-summary-item">
+                      <span class="preview-sum-lbl">Business Type</span>
+                      <strong class="preview-sum-val" id="preview-val-type">Select Type...</strong>
+                    </div>
+                    <div class="preview-summary-item">
+                      <span class="preview-sum-lbl">Location</span>
+                      <strong class="preview-sum-val" id="preview-val-loc">📍 Current Location</strong>
+                    </div>
+                    <div class="preview-summary-item">
+                      <span class="preview-sum-lbl">Budget</span>
+                      <strong class="preview-sum-val" id="preview-val-budget">₹25,00,000</strong>
+                    </div>
+                    <div class="preview-summary-item">
+                      <span class="preview-sum-lbl">Business Size</span>
+                      <strong class="preview-sum-val" id="preview-val-size">Small</strong>
+                    </div>
+                    <div class="preview-summary-item">
+                      <span class="preview-sum-lbl">Target Customers</span>
+                      <strong class="preview-sum-val" id="preview-val-target">General Public</strong>
+                    </div>
+                  </div>
+
+                  <hr class="preview-divider">
+
+                  <!-- AI Prediction Cards -->
+                  <div class="preview-section-header">
+                    <span class="preview-sec-title">AI Estimation Metrics</span>
+                  </div>
+
+                  <div class="preview-predictions-grid">
+
+                    <div class="prediction-card-mini">
+                      <div class="pred-icon icon-comp-level">⚔️</div>
+                      <div class="pred-meta">
+                        <span class="pred-lbl">Competition</span>
+                        <strong class="pred-val text-yellow" id="pred-val-competition">Moderate</strong>
+                      </div>
+                    </div>
+
+                    <div class="prediction-card-mini">
+                      <div class="pred-icon icon-demand-level">📈</div>
+                      <div class="pred-meta">
+                        <span class="pred-lbl">Customer Demand</span>
+                        <strong class="pred-val text-cyan" id="pred-val-demand">Very High</strong>
+                      </div>
+                    </div>
+
+                    <div class="prediction-card-mini">
+                      <div class="pred-icon icon-monthly-traffic">👥</div>
+                      <div class="pred-meta">
+                        <span class="pred-lbl">Expected Customers</span>
+                        <strong class="pred-val text-purple" id="pred-val-traffic">1,200+ / mo</strong>
+                      </div>
+                    </div>
+
+                    <div class="prediction-card-mini">
+                      <div class="pred-icon icon-opp-score">🏆</div>
+                      <div class="pred-meta">
+                        <span class="pred-lbl">Market Opportunity</span>
+                        <strong class="pred-val text-orange" id="pred-val-score">89 <span class="lbl-small">/
+                            100</span></strong>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Geographic Map Preview -->
+                  <div class="preview-map-section">
+                    <div class="map-header-row">
+                      <span class="map-section-lbl">Simulated Landmark Density Map</span>
+                    </div>
+                    <div class="neon-map-wrapper">
+                      <div class="map-grid-overlay"></div>
+
+                      <!-- Center Marker (Target Business Location) -->
+                      <div class="map-marker business-center-marker">
+                        <span class="marker-pulse"></span>
+                        <span class="marker-dot">📍</span>
+                        <span class="marker-label" id="map-label-business">Your Business</span>
+                      </div>
+
+                      <!-- Surrounding Landmarks -->
+                      <div class="map-marker landmark-item school" style="top: 20%; left: 12%;">
+                        <span class="landmark-icon">🏫</span>
+                        <span class="landmark-label">Primary School</span>
+                      </div>
+
+                      <div class="map-marker landmark-item office" style="top: 25%; right: 18%;">
+                        <span class="landmark-icon">🏢</span>
+                        <span class="landmark-label">Tech Center</span>
+                      </div>
+
+                      <div class="map-marker landmark-item gym" style="bottom: 28%; left: 20%;">
+                        <span class="landmark-icon">🏋️</span>
+                        <span class="landmark-label">Power Gym</span>
+                      </div>
+
+                      <div class="map-marker landmark-item mall" style="bottom: 18%; right: 15%;">
+                        <span class="landmark-icon">🛒</span>
+                        <span class="landmark-label">Galleria Mall</span>
+                      </div>
+
+                      <div class="map-marker landmark-item hospital" style="top: 62%; right: 36%;">
+                        <span class="landmark-icon">🏥</span>
+                        <span class="landmark-label">City Hospital</span>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- AI Tip Card -->
+                  <div class="preview-tip-card">
+                    <div class="tip-spark">✨</div>
+                    <div class="tip-content">
+                      <strong>AI Operational Tip</strong>
+                      <p id="preview-tip-text">Select a business type above to view tailored geographic agent
+                        recommendations.</p>
+                    </div>
+                  </div>
+
+                </div><!-- End ai-preview-panel -->
+
+              </div><!-- End analysis-grid-layout -->
+            </section>
+
+          </div>
+
+          <!-- SUB-VIEW 3: AI PROCESSING SCREEN -->
+          <div id="view-processing" class="dashboard-subview">
+
+            <section class="analysis-welcome-section">
+              <h2 class="analysis-main-header font-space">AI Market Analysis in Progress</h2>
+              <p class="analysis-main-subheader">Our AI agents are analysing thousands of market signals to generate
+                your personalised business report.</p>
+            </section>
+
+            <div class="processing-grid-layout">
+
+              <!-- Left Column: AI Agent Stack -->
+              <div class="processing-agents-column">
+
+                <!-- Agent 1 -->
+                <div class="neon-card agent-card waiting" id="proc-agent-1">
+                  <div class="agent-card-header">
+                    <span class="agent-badge">Waiting</span>
+                    <h4 class="font-space">🌍 Location Intelligence Agent</h4>
+                  </div>
+                  <ul class="agent-check-list">
+                    <li>Analysing nearby businesses</li>
+                    <li>Identifying nearby landmarks</li>
+                    <li>Measuring business density</li>
+                  </ul>
+                </div>
+
+                <!-- Agent 2 -->
+                <div class="neon-card agent-card waiting" id="proc-agent-2">
+                  <div class="agent-card-header">
+                    <span class="agent-badge">Waiting</span>
+                    <h4 class="font-space">🏪 Competitor Intelligence Agent</h4>
+                  </div>
+                  <ul class="agent-check-list">
+                    <li>Finding nearby competitors</li>
+                    <li>Comparing ratings</li>
+                    <li>Comparing pricing</li>
+                  </ul>
+                </div>
+
+                <!-- Agent 3 -->
+                <div class="neon-card agent-card waiting" id="proc-agent-3">
+                  <div class="agent-card-header">
+                    <span class="agent-badge">Waiting</span>
+                    <h4 class="font-space">⭐ Customer Review Analysis Agent</h4>
+                  </div>
+                  <ul class="agent-check-list">
+                    <li>Reading customer reviews</li>
+                    <li>Detecting customer sentiment</li>
+                    <li>Identifying common complaints</li>
+                  </ul>
+                </div>
+
+                <!-- Agent 4 -->
+                <div class="neon-card agent-card waiting" id="proc-agent-4">
+                  <div class="agent-card-header">
+                    <span class="agent-badge">Waiting</span>
+                    <h4 class="font-space">📊 Market Demand Prediction Agent</h4>
+                  </div>
+                  <ul class="agent-check-list">
+                    <li>Analysing customer demand</li>
+                    <li>Predicting foot traffic</li>
+                    <li>Estimating seasonal trends</li>
+                  </ul>
+                </div>
+
+                <!-- Agent 5 -->
+                <div class="neon-card agent-card waiting" id="proc-agent-5">
+                  <div class="agent-card-header">
+                    <span class="agent-badge">Waiting</span>
+                    <h4 class="font-space">💰 Profit & Investment Analysis Agent</h4>
+                  </div>
+                  <ul class="agent-check-list">
+                    <li>Calculating margin ratios</li>
+                    <li>Estimating payback periods</li>
+                    <li>Synthesizing cash flows</li>
+                  </ul>
+                </div>
+
+                <!-- Agent 6 -->
+                <div class="neon-card agent-card waiting" id="proc-agent-6">
+                  <div class="agent-card-header">
+                    <span class="agent-badge">Waiting</span>
+                    <h4 class="font-space">🧠 Business Recommendation Agent</h4>
+                  </div>
+                  <ul class="agent-check-list">
+                    <li>Optimizing operational models</li>
+                    <li>Evaluating localization risks</li>
+                    <li>Generating competitive playbooks</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- Right Column: AI Processing Summary Card -->
+              <div class="neon-card processing-summary-card">
+                <h4 class="font-space neon-text-purple">📊 Analysis Parameters</h4>
+
+                <div class="summary-details-list">
+                  <div class="sum-detail-row">
+                    <span class="detail-label">Business Type</span>
+                    <strong class="detail-value" id="proc-summary-type">Ice Cream Shop</strong>
+                  </div>
+                  <div class="sum-detail-row">
+                    <span class="detail-label">Location Target</span>
+                    <strong class="detail-value" id="proc-summary-loc">📍 Current Location</strong>
+                  </div>
+                  <div class="sum-detail-row">
+                    <span class="detail-label">Budget Range</span>
+                    <strong class="detail-value" id="proc-summary-budget">₹25,00,000</strong>
+                  </div>
+                  <div class="sum-detail-row">
+                    <span class="detail-label">Business Size</span>
+                    <strong class="detail-value" id="proc-summary-size">Small</strong>
+                  </div>
+                  <div class="sum-detail-row">
+                    <span class="detail-label">Target Customers</span>
+                    <strong class="detail-value" id="proc-summary-target">General Public</strong>
+                  </div>
+                  <div class="sum-detail-row">
+                    <span class="detail-label">Analysis Started</span>
+                    <strong class="detail-value font-space" id="proc-summary-start-time">23:26:36</strong>
+                  </div>
+                  <div class="sum-detail-row">
+                    <span class="detail-label">Est. Remaining</span>
+                    <strong class="detail-value font-space text-cyan" id="proc-summary-time-left">10s</strong>
+                  </div>
+                </div>
+
+                <div class="confidence-meter-container">
+                  <span class="meter-lbl">Overall AI Confidence</span>
+                  <div class="confidence-circular-progress">
+                    <span class="confidence-percentage font-space" id="proc-summary-confidence">72%</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Bottom Section: Overall Progress Bar -->
+            <div class="neon-card processing-overall-card">
+              <div class="overall-progress-header">
+                <span class="progress-lbl">Total Processing Progress</span>
+                <span class="progress-pct font-space" id="proc-progress-percent">0%</span>
+              </div>
+              <div class="overall-progress-bar-track">
+                <div class="overall-progress-bar-fill" id="proc-progress-fill" style="width: 0%;"></div>
+              </div>
+              <div class="overall-status-log-row">
+                <span class="status-bullet-pulse"></span>
+                <p class="status-log-message" id="proc-status-log">Initializing multi-agent pipeline...</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SUB-VIEW 4: AI BUSINESS RECOMMENDATION SCREEN -->
+          <div id="view-recommendation" class="dashboard-subview">
+
+            <!-- Top Success Section -->
+            <section class="rec-success-header-section text-center" style="margin-bottom: 2rem;">
+              <div class="success-icon-badge"
+                style="width: 60px; height: 60px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem auto;">
+                <span class="checkmark-emoji" style="font-size: 1.8rem;">🎉</span>
+              </div>
+              <h2 class="analysis-main-header font-space">Analysis Completed Successfully</h2>
+              <p class="analysis-main-subheader">Our AI agents analysed your selected location and generated the best
+                business recommendation.</p>
+            </section>
+
+            <!-- Recommendation Main Grid -->
+            <div class="recommendation-grid-layout">
+
+              <!-- Left Column: Recommendation Hero Card & Why Choose List -->
+              <div class="recommendation-hero-column">
+
+                <!-- Main Recommendation Hero Card -->
+                <div class="neon-card recommendation-hero-card">
+                  <div class="hero-card-shine"></div>
+                  <span class="recommendation-tag font-space">🏆 Recommended Business</span>
+                  <h1 class="recommendation-business-name font-space" id="rec-business-name">Protein Egg Café</h1>
+                  <p class="recommendation-business-subtitle" id="rec-business-subtitle">Best match for your selected
+                    location.</p>
+
+                  <div class="opportunity-score-container-wrap">
+                    <div class="score-circular-badge">
+                      <span class="score-num font-space" id="rec-score-num">95</span>
+                      <span class="score-denom">/ 100</span>
+                    </div>
+                    <div class="score-meta">
+                      <strong class="score-grade text-green" id="rec-score-grade">Excellent Opportunity</strong>
+                      <p>Estimated market opportunity score is exceptionally high.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Why Did AI Choose This? -->
+                <div class="analysis-section" style="margin-top: 2rem;">
+                  <h3 class="analysis-section-title">Why Did AI Choose This?</h3>
+                  <div class="why-choose-grid">
+
+                    <div class="why-card">
+                      <div class="why-icon">📍</div>
+                      <div class="why-meta">
+                        <strong>High Customer Traffic</strong>
+                        <p>Located in a high density commercial corridor.</p>
+                      </div>
+                    </div>
+
+                    <div class="why-card">
+                      <div class="why-icon">🏢</div>
+                      <div class="why-meta">
+                        <strong>Close to Offices & Homes</strong>
+                        <p>High capture rate of office employees and students.</p>
+                      </div>
+                    </div>
+
+                    <div class="why-card">
+                      <div class="why-icon">📉</div>
+                      <div class="why-meta">
+                        <strong>Low Competitor Density</strong>
+                        <p>Only 2 direct competitor stores detected nearby.</p>
+                      </div>
+                    </div>
+
+                    <div class="why-card">
+                      <div class="why-icon">📈</div>
+                      <div class="why-meta">
+                        <strong>Surging Demand Signals</strong>
+                        <p>Customer interest indicators have risen by 18% YoY.</p>
+                      </div>
+                    </div>
+
+                    <div class="why-card">
+                      <div class="why-icon">💰</div>
+                      <div class="why-meta">
+                        <strong>Strong Profit Potential</strong>
+                        <p>High markup margins with low raw supply costs.</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- Detailed AI SWOT & Recommendations -->
+                <div class="neon-card swot-recommendation-card"
+                  style="margin-top: 2rem; padding: 2rem; border-radius: 16px; background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.06); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+                  <h3 class="font-space neon-text-purple"
+                    style="margin-bottom: 1.5rem; color: var(--accent-purple); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0; display: flex; align-items: center; gap: 0.5rem;">
+                    <span>🧠</span> Agent Intelligence Analysis
+                  </h3>
+
+                  <div class="swot-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                      <h5
+                        style="color: var(--accent-cyan); font-size: 0.85rem; margin-bottom: 0.8rem; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                        <span>✓</span> Key Strengths
+                      </h5>
+                      <ul id="rec-strengths-list"
+                        style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+                        <li>Detecting demographic match indicators...</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5
+                        style="color: #ef4444; font-size: 0.85rem; margin-bottom: 0.8rem; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                        <span>⚠️</span> Weaknesses & Risks
+                      </h5>
+                      <ul id="rec-weaknesses-list"
+                        style="padding-left: 1.2rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+                        <li>Detecting potential competitive risks...</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1.2rem;">
+                    <h5
+                      style="color: #a855f7; font-size: 0.85rem; margin-bottom: 0.8rem; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                      <span>🔮</span> AI Recommended Alternatives
+                    </h5>
+                    <div id="rec-alternatives-container" style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                      <!-- Alternatives loaded dynamically -->
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Right Column: Business Estimations & AI Confidence circular Dial -->
+              <div class="recommendation-stats-column">
+
+                <!-- Business Estimation Statistics -->
+                <div class="neon-card estimations-summary-card">
+                  <h4 class="font-space neon-text-purple">💼 Financial Estimations</h4>
+
+                  <div class="estimations-grid">
+
+                    <div class="estimation-stat-item">
+                      <span class="est-stat-lbl">Initial Investment</span>
+                      <strong class="est-stat-val font-space" id="est-stat-investment">₹4,50,000</strong>
+                    </div>
+
+                    <div class="estimation-stat-item">
+                      <span class="est-stat-lbl">Expected Revenue</span>
+                      <strong class="est-stat-val font-space text-green" id="est-stat-revenue">₹1,80,000 / mo</strong>
+                    </div>
+
+                    <div class="estimation-stat-item">
+                      <span class="est-stat-lbl">Estimated Customers</span>
+                      <strong class="est-stat-val font-space text-cyan" id="est-stat-customers">2,800+ / mo</strong>
+                    </div>
+
+                    <div class="estimation-stat-item">
+                      <span class="est-stat-lbl">Payback Period (ROI)</span>
+                      <strong class="est-stat-val font-space text-orange" id="est-stat-roi">18 Months</strong>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- AI Confidence Dial -->
+                <div class="neon-card confidence-dial-card">
+                  <h4 class="font-space neon-text-purple"
+                    style="font-size: 0.9rem; text-align: center; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.2rem;">
+                    AI Verification Score</h4>
+                  <div class="confidence-circular-progress" id="rec-confidence-dial"
+                    style="width: 120px; height: 120px; margin: 0 auto; background: radial-gradient(closest-side, var(--bg-card) 78%, transparent 80% 100%), conic-gradient(var(--accent-purple) 98%, rgba(255,255,255,0.03) 0);">
+                    <span class="confidence-percentage font-space" id="rec-confidence-pct"
+                      style="font-size: 1.6rem;">98%</span>
+                  </div>
+                  <p class="confidence-subtext text-center"
+                    style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; line-height: 1.45;">
+                    Our AI agents have very high confidence in this recommendation.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Next Steps Timeline Widget -->
+            <div class="neon-card timeline-overall-card" style="margin-top: 2rem;">
+              <h3 class="analysis-section-title" style="margin-bottom: 1.8rem; text-align: center;">Recommended Launch
+                Timeline</h3>
+              <div class="next-steps-timeline">
+
+                <div class="timeline-step">
+                  <div class="step-badge">📍</div>
+                  <span class="step-num font-space">Step 1</span>
+                  <strong>Choose a shop location</strong>
+                </div>
+
+                <div class="timeline-step-connector"></div>
+
+                <div class="timeline-step">
+                  <div class="step-badge">💰</div>
+                  <span class="step-num font-space">Step 2</span>
+                  <strong>Prepare investment</strong>
+                </div>
+
+                <div class="timeline-step-connector"></div>
+
+                <div class="timeline-step">
+                  <div class="step-badge">📝</div>
+                  <span class="step-num font-space">Step 3</span>
+                  <strong>Complete registration</strong>
+                </div>
+
+                <div class="timeline-step-connector"></div>
+
+                <div class="timeline-step">
+                  <div class="step-badge">🚀</div>
+                  <span class="step-num font-space">Step 4</span>
+                  <strong>Launch your business</strong>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Bottom Action Row -->
+            <div class="recommendation-actions-row"
+              style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem; margin-bottom: 2rem;">
+              <button class="btn btn-primary btn-submit btn-glow-purple" id="btn-view-report"
+                style="padding: 1.1rem 2.2rem; font-size: 1rem; border-radius: 12px;">
+                📊 View Complete Market Report
+              </button>
+              <button class="btn btn-outline" id="btn-restart-analysis"
+                style="padding: 1.1rem 2.2rem; border-radius: 12px; font-size: 1rem;">
+                🔄 Analyse Another Location
+              </button>
+            </div>
+
+          </div>
+
+          <!-- SUB-VIEW 4.5: BUSINESS OPPORTUNITIES DISCOVERY PANEL -->
+          <div id="view-opportunities" class="dashboard-subview">
+            <section class="analysis-welcome-section opp-hero-section">
+              <div class="welcome-meta">
+                <span class="recommendation-tag font-space" style="margin-bottom: 0.5rem; display: inline-block;">✨
+                  Market Discovery Engine</span>
+                <h2 class="analysis-main-header font-space">Business Opportunities</h2>
+                <p class="analysis-main-subheader">Discover AI-ranked business ideas to start in your selected location,
+                  backed by real-time spatial intelligence and competitive demand signals.</p>
+              </div>
+              <div class="opportunities-search-row"
+                style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; width: 100%;">
+                <div class="input-wrapper search-wrapper"
+                  style="flex-grow: 1; max-width: 500px; display: flex; align-items: center; position: relative;">
+                  <span class="search-input-icon"
+                    style="position: absolute; left: 1rem; color: var(--text-muted); z-index: 2;">🔍</span>
+                  <input type="text" id="opp-location-search"
+                    placeholder="Enter city or locality (e.g. Indiranagar, Bengaluru)"
+                    style="padding-left: 2.6rem; border-radius: 12px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); color: #fff; font-size: 0.95rem; width: 100%; height: 48px;">
+                  <span class="input-glow"></span>
+                </div>
+                <button type="button" class="btn btn-outline" id="btn-toggle-advanced-filters"
+                  style="height: 48px; padding: 0 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                  <span>⚙️</span> Advanced Filters
+                </button>
+                <div class="export-share-header-btns" style="display: flex; gap: 0.8rem; margin-left: auto;">
+                  <button type="button" class="btn btn-outline" id="btn-export-opportunities"
+                    style="height: 48px; padding: 0 1.2rem; border-radius: 12px; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <span>📤</span> Export Report
+                  </button>
+                  <button type="button" class="btn btn-outline" id="btn-share-opportunities"
+                    style="height: 48px; padding: 0 1.2rem; border-radius: 12px; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <span>🔗</span> Share Link
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Advanced Filters Panel (Expandable Drawer) -->
+            <section class="neon-card opp-filters-panel" id="opp-filters-drawer"
+              style="display: none; padding: 2rem; border-radius: 18px; margin-bottom: 2rem; background: rgba(24, 24, 31, 0.9); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(20px);">
+              <h4 class="font-space neon-text-purple"
+                style="margin-bottom: 1.5rem; font-size: 1.05rem; text-transform: uppercase; color: var(--accent-purple); letter-spacing: 0.05em; margin-top: 0;">
+                🛠️ Filter Discovery Criteria</h4>
+              <div class="filters-grid-layout"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+                <!-- Category Select -->
+                <div class="input-group">
+                  <label for="filter-opp-category">Industry Category</label>
+                  <div class="select-wrapper" style="position: relative;">
+                    <select id="filter-opp-category"
+                      style="width: 100%; padding: 0.8rem 1.2rem; border-radius: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); color: #fff; cursor: pointer; appearance: none; -webkit-appearance: none;">
+                      <option value="All">All Categories</option>
+                      <option value="Food & Beverage">Food & Beverage</option>
+                      <option value="Fitness & Health">Fitness & Health</option>
+                      <option value="Retail & Tech">Retail & Tech</option>
+                      <option value="Services">Services & Lifestyle</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Investment Range -->
+                <div class="input-group">
+                  <div class="label-row" style="display: flex; justify-content: space-between;">
+                    <label for="filter-opp-investment">Max Investment</label>
+                    <span id="lbl-filter-investment" class="font-space"
+                      style="color: var(--accent-cyan); font-weight: 700;">₹50 Lakh</span>
+                  </div>
+                  <input type="range" id="filter-opp-investment" min="100000" max="5000000" step="100000"
+                    value="5000000" style="width: 100%; margin-top: 0.8rem;">
+                </div>
+                <!-- Risk Level -->
+                <div class="input-group">
+                  <label>Risk Tolerance</label>
+                  <div class="segmented-control"
+                    style="display: flex; background: rgba(255, 255, 255, 0.03); border-radius: 10px; padding: 0.2rem; border: 1px solid rgba(255,255,255,0.05); margin-top: 0.3rem;">
+                    <button type="button" class="filter-risk-btn active" data-risk="All"
+                      style="flex: 1; padding: 0.5rem 0; border-radius: 8px; font-size: 0.85rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.06);">All</button>
+                    <button type="button" class="filter-risk-btn" data-risk="Low"
+                      style="flex: 1; padding: 0.5rem 0; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">Low</button>
+                    <button type="button" class="filter-risk-btn" data-risk="Medium"
+                      style="flex: 1; padding: 0.5rem 0; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">Med</button>
+                    <button type="button" class="filter-risk-btn" data-risk="High"
+                      style="flex: 1; padding: 0.5rem 0; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">High</button>
+                  </div>
+                </div>
+                <!-- Competition Level -->
+                <div class="input-group">
+                  <label>Competition Cap</label>
+                  <div class="segmented-control"
+                    style="display: flex; background: rgba(255, 255, 255, 0.03); border-radius: 10px; padding: 0.2rem; border: 1px solid rgba(255,255,255,0.05); margin-top: 0.3rem;">
+                    <button type="button" class="filter-comp-btn active" data-comp="All"
+                      style="flex: 1; padding: 0.5rem 0; border-radius: 8px; font-size: 0.85rem; color: #fff; cursor: pointer; background: rgba(255,255,255,0.06);">All</button>
+                    <button type="button" class="filter-comp-btn" data-comp="Low"
+                      style="flex: 1; padding: 0.5rem 0; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">Low</button>
+                    <button type="button" class="filter-comp-btn" data-comp="Moderate"
+                      style="flex: 1; padding: 0.5rem 0; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">Mod</button>
+                    <button type="button" class="filter-comp-btn" data-comp="High"
+                      style="flex: 1; padding: 0.5rem 0; border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary); cursor: pointer;">High</button>
+                  </div>
+                </div>
+                <!-- Expected ROI Period -->
+                <div class="input-group">
+                  <label for="filter-opp-roi">Expected ROI Window</label>
+                  <div class="select-wrapper" style="position: relative;">
+                    <select id="filter-opp-roi"
+                      style="width: 100%; padding: 0.8rem 1.2rem; border-radius: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); color: #fff; cursor: pointer; appearance: none; -webkit-appearance: none;">
+                      <option value="All">Any ROI Period</option>
+                      <option value="12">Under 12 Months</option>
+                      <option value="18">Under 18 Months</option>
+                      <option value="24">Under 24 Months</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Minimum AI Score -->
+                <div class="input-group">
+                  <div class="label-row" style="display: flex; justify-content: space-between;">
+                    <label for="filter-opp-score">Min AI Score</label>
+                    <span id="lbl-filter-score" class="font-space"
+                      style="color: var(--accent-purple); font-weight: 700;">70+</span>
+                  </div>
+                  <input type="range" id="filter-opp-score" min="60" max="95" step="5" value="70"
+                    style="width: 100%; margin-top: 0.8rem;">
+                </div>
+                <!-- Search Radius -->
+                <div class="input-group">
+                  <div class="label-row" style="display: flex; justify-content: space-between;">
+                    <label for="filter-opp-radius">Search Radius</label>
+                    <span id="lbl-filter-radius" class="font-space"
+                      style="color: var(--accent-cyan); font-weight: 700;">5 km</span>
+                  </div>
+                  <input type="range" id="filter-opp-radius" min="1" max="30" step="1" value="5"
+                    style="width: 100%; margin-top: 0.8rem;">
+                </div>
+              </div>
+              <div class="filters-actions"
+                style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 1rem;">
+                <button type="button" class="btn btn-outline" id="btn-reset-opp-filters"
+                  style="border-radius: 8px; padding: 0.6rem 1.2rem; font-size: 0.85rem; cursor: pointer;">Reset
+                  Filters</button>
+                <button type="button" class="btn btn-primary" id="btn-apply-opp-filters"
+                  style="border-radius: 8px; padding: 0.6rem 1.2rem; font-size: 0.85rem; background: var(--accent-purple); color: #fff; cursor: pointer;">Apply
+                  Filters</button>
+              </div>
+            </section>
+
+            <!-- Featured Highlight: AI Top Recommendation Panel -->
+            <section class="analysis-section" id="section-featured-recommendation">
+              <h3 class="analysis-section-title">🏆 AI Top Recommendation</h3>
+              <div class="neon-card featured-rec-card" id="featured-rec-container"
+                style="padding: 2.2rem; border-radius: 20px; background: radial-gradient(circle at 100% 0%, rgba(0, 240, 255, 0.05) 0%, transparent 50%), var(--bg-card); border: 1px solid rgba(0, 240, 255, 0.15); box-shadow: 0 15px 35px -10px rgba(0, 240, 255, 0.1), 0 0 1px 1px rgba(0, 240, 255, 0.08) inset; display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center; position: relative; overflow: hidden; margin-top: 1rem;">
+                <div class="featured-rec-left">
+                  <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+                    <div class="trophy-badge"
+                      style="width: 48px; height: 48px; border-radius: 12px; background: rgba(0, 240, 255, 0.1); border: 1px solid var(--accent-cyan); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; filter: drop-shadow(0 0 6px var(--accent-cyan));">
+                      🏆</div>
+                    <div>
+                      <span class="recommendation-tag font-space"
+                        style="margin-bottom: 0.1rem; display: inline-block;">Highest Ranked Opportunity</span>
+                      <h2 class="featured-biz-name font-space" id="featured-biz-name"
+                        style="font-size: 1.8rem; margin: 0; color: #fff;">Protein Egg Cafe</h2>
+                    </div>
+                  </div>
+                  <p id="featured-biz-desc"
+                    style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.55; margin-bottom: 1.5rem;">
+                    The local market shows a critical unmet demand for clean breakfast options and health food cafes.
+                    High concentration of gym-goers and young professionals combined with low direct competitor
+                    footprint makes this the most mathematically viable startup opportunity.</p>
+
+                  <div class="featured-reasons"
+                    style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.8rem;">
+                    <h5
+                      style="color: var(--accent-cyan); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; font-weight: 700; margin: 0;">
+                      Why it is recommended:</h5>
+                    <ul id="featured-biz-reasons"
+                      style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); padding-left: 0;">
+                      <li style="display: flex; align-items: flex-start; gap: 0.6rem;"><span class="green"
+                          style="font-weight: bold; flex-shrink: 0;">✓</span> <span>High capturing rate: Over 3 gyms and
+                          2 wellness parks in a 1km service radius.</span></li>
+                      <li style="display: flex; align-items: flex-start; gap: 0.6rem;"><span class="green"
+                          style="font-weight: bold; flex-shrink: 0;">✓</span> <span>Low competition: Nearest specialty
+                          health restaurant is 3.2km away.</span></li>
+                      <li style="display: flex; align-items: flex-start; gap: 0.6rem;"><span class="green"
+                          style="font-weight: bold; flex-shrink: 0;">✓</span> <span>High ROI efficiency: Predicts full
+                          initial investment payback within 14 months.</span></li>
+                    </ul>
+                  </div>
+
+                  <div class="featured-actions" style="display: flex; gap: 1rem; align-items: center;">
+                    <button type="button" class="btn btn-primary btn-submit btn-glow-cyan" id="featured-btn-view"
+                      style="padding: 0.85rem 1.8rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                      📊 View Full Analysis
+                    </button>
+                    <button type="button" class="btn btn-outline" id="featured-btn-save"
+                      style="padding: 0.85rem 1.2rem; border-radius: 10px; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                      <span>★</span> <span class="btn-save-text">Save Opportunity</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="featured-rec-right"
+                  style="display: flex; flex-direction: column; align-items: center; justify-content: center; border-left: 1px solid rgba(255,255,255,0.06); padding-left: 2rem;">
+                  <div class="confidence-meter-container" style="text-align: center; width: 100%;">
+                    <span class="meter-lbl"
+                      style="margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--text-muted); display: block;">Algorithmic
+                      Fit Probability</span>
+                    <div class="confidence-circular-progress" id="featured-biz-dial"
+                      style="width: 140px; height: 140px; margin: 0 auto; background: radial-gradient(closest-side, var(--bg-card) 78%, transparent 80% 100%), conic-gradient(var(--accent-cyan) 95%, rgba(255,255,255,0.03) 0);">
+                      <span class="confidence-percentage font-space" id="featured-biz-pct"
+                        style="font-size: 1.8rem; color: #fff;">95%</span>
+                    </div>
+                  </div>
+                  <div class="stats-row"
+                    style="display: flex; width: 100%; gap: 1.2rem; margin-top: 1.8rem; justify-content: space-around;">
+                    <div style="text-align: center;">
+                      <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Startup
+                        Investment</span>
+                      <strong class="font-space" id="featured-biz-investment"
+                        style="font-size: 1.2rem; color: var(--accent-cyan);">₹6.5 Lakh</strong>
+                    </div>
+                    <div
+                      style="text-align: center; border-left: 1px solid rgba(255,255,255,0.05); padding-left: 1.2rem;">
+                      <span style="font-size: 0.75rem; color: var(--text-muted); display: block;">Monthly Revenue</span>
+                      <strong class="font-space" id="featured-biz-revenue"
+                        style="font-size: 1.2rem; color: var(--accent-purple);">₹1.8 Lakh</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Bookmarked Opportunities Section -->
+            <section class="analysis-section" id="section-saved-opportunities"
+              style="display: none; margin-bottom: 2rem;">
+              <h3 class="analysis-section-title">⭐ Saved Opportunities</h3>
+              <div class="saved-opps-row" id="saved-opps-container"
+                style="display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.5rem 0 1.2rem 0; width: 100%;">
+                <!-- Dynamic Bookmarks list -->
+              </div>
+            </section>
+
+            <!-- Main Opportunities Cards Grid -->
+            <section class="analysis-section">
+              <div class="grid-header-row"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+                <h3 class="analysis-section-title" style="margin-bottom: 0;">🏪 Alternative Opportunities (<span
+                    id="opp-count-badge">0</span>)</h3>
+                <div class="sort-selector"
+                  style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-secondary);">
+                  <span>Sort By:</span>
+                  <div class="select-wrapper" style="min-width: 140px; position: relative;">
+                    <select id="opp-sort-select"
+                      style="padding: 0.4rem 1.8rem 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 8px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); color: #fff; cursor: pointer; appearance: none; -webkit-appearance: none;">
+                      <option value="score">Opportunity Score</option>
+                      <option value="investment-asc">Investment (Low to High)</option>
+                      <option value="investment-desc">Investment (High to Low)</option>
+                      <option value="roi">ROI Period (Shortest)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="opportunities-grid" id="opportunities-cards-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                <!-- Opportunity Cards load here dynamically via Javascript -->
+              </div>
+            </section>
+
+            <!-- Geographic Map & Analysis Section -->
+            <section class="analysis-section">
+              <h3 class="analysis-section-title">📍 Spatial Intelligence Map</h3>
+              <div class="neon-card map-card"
+                style="padding: 2rem; border-radius: 16px; background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.06); backdrop-filter: blur(15px);">
+                <div class="card-header-actions"
+                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                  <div class="card-title-group">
+                    <h4 class="font-space neon-text-purple"
+                      style="color: var(--accent-purple); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">
+                      📍 Spatial Landmark Density Map</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0.2rem 0 0 0;">Real-time spatial
+                      distribution of direct competitors, landmarks, and demographic density heatmaps</p>
+                  </div>
+                  <div class="map-layer-toggles"
+                    style="display: flex; gap: 1.2rem; font-size: 0.8rem; flex-wrap: wrap; align-items: center;">
+                    <label
+                      style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); cursor: pointer;">
+                      <input type="checkbox" id="layer-competitors" checked style="accent-color: #ef4444;"> <span
+                        class="legend-dot"
+                        style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; box-shadow: 0 0 4px #ef4444;"></span>
+                      Competitors
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); cursor: pointer;">
+                      <input type="checkbox" id="layer-education" checked style="accent-color: #3b82f6;"> <span
+                        class="legend-dot"
+                        style="width: 10px; height: 10px; border-radius: 50%; background: #3b82f6; box-shadow: 0 0 4px #3b82f6;"></span>
+                      Schools/Colleges
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); cursor: pointer;">
+                      <input type="checkbox" id="layer-commercial" checked style="accent-color: #a855f7;"> <span
+                        class="legend-dot"
+                        style="width: 10px; height: 10px; border-radius: 50%; background: #a855f7; box-shadow: 0 0 4px #a855f7;"></span>
+                      Shopping Malls
+                    </label>
+                    <label
+                      style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); cursor: pointer;">
+                      <input type="checkbox" id="layer-lifestyle" checked style="accent-color: #00f0ff;"> <span
+                        class="legend-dot"
+                        style="width: 10px; height: 10px; border-radius: 50%; background: #00f0ff; box-shadow: 0 0 4px #00f0ff;"></span>
+                      Transit & Gyms
+                    </label>
+                  </div>
+                </div>
+                <div class="interactive-map-container" id="opportunities-google-map"
+                  style="width: 100%; height: 420px; border-radius: 12px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); background: #121216;">
+                  <div class="map-loading-placeholder"
+                    style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; color: var(--text-muted); z-index: 1;">
+                    <div class="glow-spinner"
+                      style="width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.03); border-top-color: var(--accent-cyan); border-radius: 50%; animation: spin 1s linear infinite;">
+                    </div>
+                    <span class="font-space" style="font-size: 0.9rem;">Synthesizing spatial intelligence
+                      canvas...</span>
+                  </div>
+                  <!-- Emulated Interactive Map Screen when Google Maps API key is not loaded -->
+                  <div class="emulated-opp-map" id="emulated-opp-map"
+                    style="position: absolute; inset: 0; z-index: 0; background: radial-gradient(circle at 50% 50%, #1a1a24 0%, #121216 100%); background-size: 30px 30px; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);">
+                    <!-- Map visual markers loaded dynamically -->
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Bottom Row Grid: Trends & Business Comparison -->
+            <div class="opp-bottom-grid"
+              style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem; margin-bottom: 2rem;">
+
+              <!-- Market Trends Section -->
+              <section class="analysis-section" style="margin-bottom: 0;">
+                <h3 class="analysis-section-title">📈 Local Market Trends</h3>
+                <div class="neon-card"
+                  style="padding: 1.8rem; border-radius: 16px; background: var(--bg-card); border: 1px solid var(--border-color); height: calc(100% - 2.8rem);">
+                  <div class="trends-list" style="display: flex; flex-direction: column; gap: 1.2rem;">
+
+                    <div class="trend-row"
+                      style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.8rem;">
+                      <div>
+                        <strong class="font-space" style="color: #fff; font-size: 0.95rem; display: block;">Organic
+                          Health Cafes</strong>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Wellness sector momentum</span>
+                      </div>
+                      <div style="text-align: right;">
+                        <span class="green font-space" style="font-weight: 700; font-size: 0.95rem;">+24% YoY</span>
+                        <div
+                          style="width: 80px; height: 4px; background: rgba(16, 185, 129, 0.1); border-radius: 2px; margin-top: 0.25rem; overflow: hidden;">
+                          <div style="width: 80%; height: 100%; background: #10b981; box-shadow: 0 0 4px #10b981;">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="trend-row"
+                      style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.8rem;">
+                      <div>
+                        <strong class="font-space" style="color: #fff; font-size: 0.95rem; display: block;">Specialty
+                          Coffee Bakeries</strong>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Social work spaces demand</span>
+                      </div>
+                      <div style="text-align: right;">
+                        <span class="green font-space" style="font-weight: 700; font-size: 0.95rem;">+16% YoY</span>
+                        <div
+                          style="width: 80px; height: 4px; background: rgba(16, 185, 129, 0.1); border-radius: 2px; margin-top: 0.25rem; overflow: hidden;">
+                          <div style="width: 60%; height: 100%; background: #10b981; box-shadow: 0 0 4px #10b981;">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="trend-row"
+                      style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 0.8rem;">
+                      <div>
+                        <strong class="font-space" style="color: #fff; font-size: 0.95rem; display: block;">Self-Care &
+                          Grooming Salons</strong>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Premium lifestyle indexing</span>
+                      </div>
+                      <div style="text-align: right;">
+                        <span class="green font-space" style="font-weight: 700; font-size: 0.95rem;">+12% YoY</span>
+                        <div
+                          style="width: 80px; height: 4px; background: rgba(16, 185, 129, 0.1); border-radius: 2px; margin-top: 0.25rem; overflow: hidden;">
+                          <div style="width: 48%; height: 100%; background: #10b981; box-shadow: 0 0 4px #10b981;">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="trend-row" style="display: flex; justify-content: space-between; align-items: center;">
+                      <div>
+                        <strong class="font-space" style="color: #fff; font-size: 0.95rem; display: block;">Wellness
+                          Fitness Clubs</strong>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">Private personal training</span>
+                      </div>
+                      <div style="text-align: right;">
+                        <span class="green font-space" style="font-weight: 700; font-size: 0.95rem;">+18% YoY</span>
+                        <div
+                          style="width: 80px; height: 4px; background: rgba(16, 185, 129, 0.1); border-radius: 2px; margin-top: 0.25rem; overflow: hidden;">
+                          <div style="width: 72%; height: 100%; background: #10b981; box-shadow: 0 0 4px #10b981;">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+
+              <!-- Business Comparison Tool -->
+              <section class="analysis-section" style="margin-bottom: 0;">
+                <h3 class="analysis-section-title">⚖️ Side-by-Side Comparison</h3>
+                <div class="neon-card"
+                  style="padding: 1.8rem; border-radius: 16px; background: var(--bg-card); border: 1px solid var(--border-color); height: calc(100% - 2.8rem);">
+                  <div class="comparison-selectors" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div class="select-wrapper" style="flex: 1; position: relative;">
+                      <select id="compare-select-a"
+                        style="border-radius: 8px; padding: 0.5rem; font-size: 0.85rem; border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); color: #fff; width: 100%; cursor: pointer;">
+                        <!-- JS populated option A -->
+                      </select>
+                    </div>
+                    <div style="align-self: center; color: var(--text-muted); font-weight: bold;">VS</div>
+                    <div class="select-wrapper" style="flex: 1; position: relative;">
+                      <select id="compare-select-b"
+                        style="border-radius: 8px; padding: 0.5rem; font-size: 0.85rem; border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); color: #fff; width: 100%; cursor: pointer;">
+                        <!-- JS populated option B -->
+                      </select>
+                    </div>
+                  </div>
+                  <div class="comparison-table-wrapper" style="overflow-x: auto;">
+                    <table style="width: 100%; font-size: 0.85rem; border-collapse: collapse;">
+                      <thead>
+                        <tr style="border-bottom: 1px solid var(--border-color);">
+                          <th style="padding: 0.6rem 0.4rem; text-align: left; color: var(--text-muted);">Metric</th>
+                          <th id="compare-hdr-a"
+                            style="padding: 0.6rem 0.4rem; text-align: center; color: var(--accent-cyan);">Biz A</th>
+                          <th id="compare-hdr-b"
+                            style="padding: 0.6rem 0.4rem; text-align: center; color: var(--accent-purple);">Biz B</th>
+                        </tr>
+                      </thead>
+                      <tbody id="compare-table-body">
+                        <!-- JS populated comparison rows -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+          </div>
+
+          <!-- SUB-VIEW 4.6: SAVED REPORTS PAGE -->
+          <div id="view-saved-reports" class="dashboard-subview">
+            <section class="analysis-welcome-section saved-reports-hero">
+              <div class="welcome-meta">
+                <span class="recommendation-tag font-space" style="margin-bottom: 0.5rem; display: inline-block;">📑
+                  Saved Intelligence Reports</span>
+                <h2 class="analysis-main-header font-space">Saved Reports</h2>
+                <p class="analysis-main-subheader">View and manage your previous market analysis reports.</p>
+              </div>
+
+              <!-- Search Bar & Filters Controls Bar -->
+              <div class="saved-reports-controls-bar"
+                style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; width: 100%;">
+                <div class="input-wrapper search-wrapper"
+                  style="flex-grow: 1; max-width: 480px; display: flex; align-items: center; position: relative;">
+                  <span class="search-input-icon"
+                    style="position: absolute; left: 1rem; color: var(--text-muted); z-index: 2;">🔍</span>
+                  <input type="text" id="search-saved-reports" placeholder="Search saved reports..."
+                    style="padding-left: 2.6rem; border-radius: 12px; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); color: #fff; font-size: 0.95rem; width: 100%; height: 48px;">
+                  <span class="input-glow"></span>
+                </div>
+
+                <div class="filter-pills-row" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+                  <button type="button" class="filter-pill-btn active" data-filter="all">All Reports</button>
+                  <button type="button" class="filter-pill-btn" data-filter="recent">Recent</button>
+                  <button type="button" class="filter-pill-btn" data-filter="highest">Highest Opportunity</button>
+                </div>
+
+                <div class="filter-selects-row" style="display: flex; gap: 0.8rem; margin-left: auto; flex-wrap: wrap;">
+                  <div class="select-wrapper" style="min-width: 150px; position: relative;">
+                    <select id="filter-saved-category"
+                      style="padding: 0.6rem 1rem; border-radius: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); color: #fff; cursor: pointer; appearance: none; -webkit-appearance: none; font-size: 0.85rem; width: 100%;">
+                      <option value="All">All Categories</option>
+                      <option value="Food & Beverage">Food & Beverage</option>
+                      <option value="Retail & Tech">Retail & Tech</option>
+                      <option value="Retail & Supplies">Retail & Supplies</option>
+                      <option value="Healthcare">Healthcare</option>
+                      <option value="Fitness & Health">Fitness & Health</option>
+                      <option value="Services">Services</option>
+                    </select>
+                  </div>
+                  <div class="select-wrapper" style="min-width: 150px; position: relative;">
+                    <select id="filter-saved-location"
+                      style="padding: 0.6rem 1rem; border-radius: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); color: #fff; cursor: pointer; appearance: none; -webkit-appearance: none; font-size: 0.85rem; width: 100%;">
+                      <option value="All">All Locations</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Saved Reports Grid Container -->
+            <section class="analysis-section" style="margin-top: 1.5rem;">
+              <div id="saved-reports-grid" class="saved-reports-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem;">
+                <!-- Dynamically populated report cards -->
+              </div>
+
+              <!-- Empty State Container -->
+              <div id="saved-reports-empty-state" class="neon-card empty-reports-card"
+                style="display: none; padding: 4rem 2rem; border-radius: 20px; text-align: center; background: rgba(24, 24, 31, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); margin-top: 1rem;">
+                <div class="empty-state-icon"
+                  style="font-size: 3.5rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.3));">
+                  📑</div>
+                <h3 class="empty-state-title font-space" style="font-size: 1.4rem; color: #fff; margin-bottom: 0.5rem;">
+                  No Saved Reports Yet</h3>
+                <p class="empty-state-subtitle"
+                  style="color: var(--text-muted); font-size: 0.95rem; max-width: 480px; margin: 0 auto 1.5rem auto; line-height: 1.5;">
+                  Complete a market analysis and save it to access your reports here.</p>
+                <button type="button" class="btn btn-primary btn-submit btn-glow-purple" id="btn-saved-empty-create"
+                  style="padding: 0.9rem 2rem; border-radius: 12px; font-size: 0.95rem; cursor: pointer;">
+                  🚀 Create New Analysis
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <!-- SUB-VIEW 4.7: AI INSIGHTS PAGE -->
+          <div id="view-ai-insights" class="dashboard-subview">
+
+            <!-- Page Header -->
+            <section class="analysis-welcome-section ai-insights-hero">
+              <div class="welcome-meta">
+                <span class="recommendation-tag font-space" style="margin-bottom:0.5rem;display:inline-block;">🧠
+                  Powered by MarketMind Intelligence Engine</span>
+                <h2 class="analysis-main-header font-space">AI Insights</h2>
+                <p class="analysis-main-subheader">AI-powered insights and recommendations from your market analysis.
+                </p>
+              </div>
+              <div id="ai-insights-refresh-row"
+                style="margin-top:1rem;display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap;">
+                <span id="ai-insights-analysis-tag" class="ai-insights-source-tag">No analysis loaded yet</span>
+                <button type="button" id="btn-run-analysis-from-insights" class="btn btn-outline"
+                  style="padding:0.5rem 1.2rem;font-size:0.85rem;border-radius:10px;">
+                  ⚡ Run New Analysis
+                </button>
+              </div>
+            </section>
+
+            <!-- Loading State -->
+            <div id="ai-insights-loading" class="ai-insights-state-wrap" style="display:none;">
+              <div class="ai-insights-state-card">
+                <div class="ai-insights-spinner"></div>
+                <p class="ai-insights-state-title">Generating AI Insights…</p>
+                <p class="ai-insights-state-sub">Analysing market data, competitors, and demand signals.</p>
+              </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="ai-insights-empty" class="ai-insights-state-wrap" style="display:none;">
+              <div class="ai-insights-state-card">
+                <div style="font-size:3.5rem;margin-bottom:1rem;filter:drop-shadow(0 0 12px rgba(168,85,247,0.4));">🧠
+                </div>
+                <p class="ai-insights-state-title">No Market Analysis Found</p>
+                <p class="ai-insights-state-sub">Complete a market analysis first, then return here for AI-powered
+                  insights based on your results.</p>
+                <button type="button" id="btn-insights-create-analysis" class="btn btn-primary btn-glow-purple"
+                  style="margin-top:1.5rem;padding:0.9rem 2rem;border-radius:12px;font-size:0.95rem;cursor:pointer;">
+                  🚀 Create New Analysis
+                </button>
+              </div>
+            </div>
+
+            <!-- Insights Content (shown when data is available) -->
+            <div id="ai-insights-content" style="display:none;">
+
+              <!-- 1. MARKET OVERVIEW -->
+              <section class="analysis-section ai-insights-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">📊</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Market Overview</h3>
+                    <p class="ai-insights-section-sub">Key metrics from your analysis</p>
+                  </div>
+                </div>
+                <div class="ai-overview-grid" id="ai-overview-grid">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 2. KEY AI INSIGHTS -->
+              <section class="analysis-section ai-insights-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">💡</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Key AI Insights</h3>
+                    <p class="ai-insights-section-sub">Intelligent observations derived from your market data</p>
+                  </div>
+                </div>
+                <div class="ai-insights-cards-grid" id="ai-key-insights-grid">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- Two-column row: Business Recommendation + Competitor Insights -->
+              <div class="ai-insights-two-col">
+
+                <!-- 3. BUSINESS RECOMMENDATION -->
+                <section class="analysis-section ai-insights-section">
+                  <div class="ai-insights-section-header">
+                    <span class="ai-insights-section-icon">🏆</span>
+                    <div>
+                      <h3 class="ai-insights-section-title">Business Recommendation</h3>
+                      <p class="ai-insights-section-sub">AI's top pick for your market</p>
+                    </div>
+                  </div>
+                  <div id="ai-business-rec-card" class="ai-biz-rec-card">
+                    <!-- JS populated -->
+                  </div>
+                </section>
+
+                <!-- 4. COMPETITOR INSIGHTS -->
+                <section class="analysis-section ai-insights-section">
+                  <div class="ai-insights-section-header">
+                    <span class="ai-insights-section-icon">⚔️</span>
+                    <div>
+                      <h3 class="ai-insights-section-title">Competitor Insights</h3>
+                      <p class="ai-insights-section-sub">Competitive landscape analysis</p>
+                    </div>
+                  </div>
+                  <div id="ai-competitor-insights-card">
+                    <!-- JS populated -->
+                  </div>
+                </section>
+
+              </div>
+
+              <!-- Two-column row: Customer Insights + AI Recommendations -->
+              <div class="ai-insights-two-col">
+
+                <!-- 5. CUSTOMER INSIGHTS -->
+                <section class="analysis-section ai-insights-section">
+                  <div class="ai-insights-section-header">
+                    <span class="ai-insights-section-icon">👥</span>
+                    <div>
+                      <h3 class="ai-insights-section-title">Customer Insights</h3>
+                      <p class="ai-insights-section-sub">Understanding your target audience</p>
+                    </div>
+                  </div>
+                  <div id="ai-customer-insights-card">
+                    <!-- JS populated -->
+                  </div>
+                </section>
+
+                <!-- 6. AI RECOMMENDATIONS -->
+                <section class="analysis-section ai-insights-section">
+                  <div class="ai-insights-section-header">
+                    <span class="ai-insights-section-icon">🎯</span>
+                    <div>
+                      <h3 class="ai-insights-section-title">AI Recommendations</h3>
+                      <p class="ai-insights-section-sub">Actionable strategies for your business</p>
+                    </div>
+                  </div>
+                  <div id="ai-recommendations-card">
+                    <!-- JS populated -->
+                  </div>
+                </section>
+
+              </div>
+
+              <!-- 7. MARKET OPPORTUNITY SUMMARY -->
+              <section class="analysis-section ai-insights-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">🌟</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Market Opportunity Summary</h3>
+                    <p class="ai-insights-section-sub">Why this opportunity may work</p>
+                  </div>
+                </div>
+                <div id="ai-opportunity-summary-card" class="ai-opportunity-summary">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 8. CONFIDENCE PANEL -->
+              <section class="analysis-section ai-insights-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">🤖</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">AI Confidence Score</h3>
+                    <p class="ai-insights-section-sub">How certain the AI is about this analysis</p>
+                  </div>
+                </div>
+                <div id="ai-confidence-panel" class="ai-confidence-panel">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+            </div><!-- /ai-insights-content -->
+
+          </div><!-- /view-ai-insights -->
+
+          <!-- SUB-VIEW 6: MARKET TRENDS PAGE -->
+          <div id="view-market-trends" class="dashboard-subview">
+
+            <!-- Page Header -->
+            <section class="analysis-welcome-section mt-hero">
+              <div class="welcome-meta">
+                <span class="recommendation-tag font-space" style="margin-bottom:0.5rem;display:inline-block;">📡 Live
+                  Market Intelligence</span>
+                <h2 class="analysis-main-header font-space">Market Trends</h2>
+                <p class="analysis-main-subheader">Discover current market movements, consumer demand, emerging
+                  opportunities, and business trends.</p>
+              </div>
+            </section>
+
+            <!-- 1. CONTROLS: Location + Category + Target Customer -->
+            <section class="analysis-section mt-controls-section">
+              <div class="mt-controls-grid">
+
+                <div class="mt-control-group">
+                  <label class="mt-control-label">
+                    <span>📍</span> Location
+                  </label>
+                  <input type="text" id="mt-location-input" class="mt-control-input" placeholder="e.g. Hyderabad, India"
+                    value="Hyderabad, India" autocomplete="off" />
+                </div>
+
+                <div class="mt-control-group">
+                  <label class="mt-control-label">
+                    <span>🏪</span> Business Category
+                  </label>
+                  <select id="mt-category-select" class="mt-control-select">
+                    <option value="Food & Beverage">Food &amp; Beverage</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Education">Education</option>
+                    <option value="Fitness & Wellness">Fitness &amp; Wellness</option>
+                    <option value="Beauty & Personal Care">Beauty &amp; Personal Care</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Fashion & Apparel">Fashion &amp; Apparel</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Hospitality & Tourism">Hospitality &amp; Tourism</option>
+                    <option value="Finance & Banking">Finance &amp; Banking</option>
+                    <option value="Entertainment">Entertainment</option>
+                  </select>
+                </div>
+
+                <div class="mt-control-group">
+                  <label class="mt-control-label">
+                    <span>👥</span> Target Customer
+                  </label>
+                  <select id="mt-target-select" class="mt-control-select">
+                    <option value="General Public">General Public</option>
+                    <option value="Students">Students</option>
+                    <option value="Food Lovers">Food Lovers</option>
+                    <option value="Office Employees">Office Employees</option>
+                    <option value="Families">Families</option>
+                    <option value="Women">Women</option>
+                    <option value="Men">Men</option>
+                    <option value="Senior Citizens">Senior Citizens</option>
+                    <option value="Hospital Visitors">Hospital Visitors</option>
+                    <option value="Visitors/Tourists">Visitors/Tourists</option>
+                  </select>
+                </div>
+
+                <div class="mt-control-group mt-control-btn-group">
+                  <button type="button" id="btn-mt-analyze" class="btn btn-primary btn-glow-purple mt-analyze-btn"
+                    onclick="if(window.handleMarketTrendsAnalyzeClick) window.handleMarketTrendsAnalyzeClick();">
+                    <span id="mt-btn-icon" style="pointer-events: none;">📡</span>
+                    <span id="mt-btn-text" style="pointer-events: none;">Analyze Market</span>
+                  </button>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- DATA FRESHNESS BAR -->
+            <div id="mt-freshness-bar" class="mt-freshness-bar" style="display:none;">
+              <span id="mt-freshness-text">Last updated: —</span>
+              <span id="mt-data-source-tag" class="mt-data-source-pill">Google Maps + Gemini AI</span>
+            </div>
+
+            <!-- LOADING STATE -->
+            <div id="mt-loading-state" class="mt-state-wrap" style="display:none;">
+              <div class="mt-state-card">
+                <div class="mt-loading-ring">
+                  <div class="mt-ring-segment"></div>
+                  <div class="mt-ring-segment"></div>
+                  <div class="mt-ring-segment"></div>
+                </div>
+                <p class="mt-state-title">Analyzing current market signals…</p>
+                <p class="mt-state-sub" id="mt-loading-sub">Fetching real-world business data from Google Maps…</p>
+                <div class="mt-loading-steps" id="mt-loading-steps">
+                  <div class="mt-loading-step" id="mtstep-1">
+                    <span class="mt-step-dot pending"></span>
+                    <span>Geocoding location</span>
+                  </div>
+                  <div class="mt-loading-step" id="mtstep-2">
+                    <span class="mt-step-dot pending"></span>
+                    <span>Fetching nearby businesses from Google Maps</span>
+                  </div>
+                  <div class="mt-loading-step" id="mtstep-3">
+                    <span class="mt-step-dot pending"></span>
+                    <span>Sending data to Gemini AI for trend analysis</span>
+                  </div>
+                  <div class="mt-loading-step" id="mtstep-4">
+                    <span class="mt-step-dot pending"></span>
+                    <span>Generating insights and opportunities</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ERROR STATE -->
+            <div id="mt-error-state" class="mt-state-wrap" style="display:none;">
+              <div class="mt-state-card mt-error-card">
+                <div style="font-size:2.8rem;margin-bottom:1rem;">⚠️</div>
+                <p class="mt-state-title" id="mt-error-title">Market trend data is temporarily unavailable.</p>
+                <p class="mt-state-sub" id="mt-error-desc">Please check your API configuration in Settings and try
+                  again.</p>
+                <button type="button" id="btn-mt-retry" class="btn btn-outline"
+                  style="margin-top:1.5rem;padding:0.75rem 2rem;border-radius:10px;cursor:pointer;">
+                  🔄 Retry
+                </button>
+              </div>
+            </div>
+
+            <!-- EMPTY/PROMPT STATE (before first analysis) -->
+            <div id="mt-empty-state" class="mt-state-wrap">
+              <div class="mt-state-card">
+                <div style="font-size:3.5rem;margin-bottom:1rem;filter:drop-shadow(0 0 14px rgba(0,240,255,0.4));">📡
+                </div>
+                <p class="mt-state-title">Ready to Analyze Market Trends</p>
+                <p class="mt-state-sub">Select a location, business category, and target customer above, then click
+                  <strong>Analyze Market</strong> to fetch live data.</p>
+                <div class="mt-empty-pills">
+                  <span class="mt-pill">🗺️ Real Google Maps Data</span>
+                  <span class="mt-pill">🤖 Gemini AI Analysis</span>
+                  <span class="mt-pill">📊 Live Trend Chart</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- MAIN CONTENT (hidden until analysis completes) -->
+            <div id="mt-content" style="display:none;">
+
+              <!-- 2. TREND OVERVIEW CARDS -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">📊</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Trend Overview</h3>
+                    <p class="ai-insights-section-sub">Real-time market signals for the selected category and location
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-overview-grid" id="mt-overview-grid">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 3. TREND CHART -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">📈</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Trend Chart</h3>
+                    <p class="ai-insights-section-sub">12-month search interest from Google Trends — <em>real public
+                        data</em></p>
+                  </div>
+                </div>
+                <div class="mt-chart-card" id="mt-chart-card">
+                  <div id="mt-chart-container">
+                    <!-- JS inserts Google Trends iframe or no-data message -->
+                  </div>
+                </div>
+              </section>
+
+              <!-- 4. RISING BUSINESS CATEGORIES -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">🚀</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Rising Business Categories</h3>
+                    <p class="ai-insights-section-sub">Categories gaining momentum based on local business density and
+                      ratings</p>
+                  </div>
+                </div>
+                <div class="mt-categories-grid" id="mt-categories-grid">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 5. CONSUMER TRENDS -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">👥</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Consumer Trends</h3>
+                    <p class="ai-insights-section-sub">What customers are actively seeking in this market</p>
+                  </div>
+                </div>
+                <div class="ai-insights-cards-grid" id="mt-consumer-grid">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 6. EMERGING OPPORTUNITIES -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">💎</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Emerging Opportunities</h3>
+                    <p class="ai-insights-section-sub">High-potential business ideas derived from the collected market
+                      data</p>
+                  </div>
+                </div>
+                <div class="mt-opportunities-grid" id="mt-opportunities-grid">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 7. LOCAL MARKET INSIGHTS -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">🗺️</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Local Market Insights</h3>
+                    <p class="ai-insights-section-sub">Analysis of the specific local competitive landscape</p>
+                  </div>
+                </div>
+                <div id="mt-local-insights-card" class="ai-opportunity-summary">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 8. MARKET SIGNALS / NEWS -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">📰</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Market Signals</h3>
+                    <p class="ai-insights-section-sub">Recent developments and signals from the selected market —
+                      derived from real business data</p>
+                  </div>
+                </div>
+                <div class="mt-signals-grid" id="mt-signals-grid">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 9. AI TREND SUMMARY -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">🤖</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">AI Trend Summary</h3>
+                    <p class="ai-insights-section-sub">AI-generated analysis based on real Google Maps business data</p>
+                  </div>
+                </div>
+                <div id="mt-ai-summary-card" class="mt-ai-summary-card">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+              <!-- 10. SOURCES -->
+              <section class="analysis-section">
+                <div class="ai-insights-section-header">
+                  <span class="ai-insights-section-icon">📋</span>
+                  <div>
+                    <h3 class="ai-insights-section-title">Data Sources</h3>
+                    <p class="ai-insights-section-sub">All data used in this analysis</p>
+                  </div>
+                </div>
+                <div class="mt-sources-grid" id="mt-sources-grid">
+                  <!-- JS populated -->
+                </div>
+              </section>
+
+            </div><!-- /mt-content -->
+
+          </div><!-- /view-market-trends -->
+
+          <!-- SUB-VIEW 5: SETTINGS PAGE -->
+          <div id="view-settings" class="dashboard-subview">
+            <!-- Header -->
+            <section class="analysis-welcome-section settings-hero">
+              <div class="welcome-meta">
+                <span class="recommendation-tag font-space" style="margin-bottom: 0.5rem; display: inline-block;">⚙️
+                  Account &amp; Workspace Settings</span>
+                <h2 class="analysis-main-header font-space">Settings</h2>
+                <p class="analysis-main-subheader">Manage your profile, preferences, account details, and security.</p>
+              </div>
+            </section>
+
+            <div class="settings-page-container">
+
+              <!-- SECTION 1 — PROFILE -->
+              <section class="settings-section-card">
+                <div class="settings-section-header">
+                  <span class="settings-section-icon">👤</span>
+                  <div>
+                    <h3 class="settings-section-title">Profile Information</h3>
+                    <p class="settings-section-sub">Update your account profile and details</p>
+                  </div>
+                </div>
+
+                <form id="settings-profile-form" class="settings-form-grid">
+                  <div class="settings-avatar-wrap">
+                    <div class="settings-avatar-large" id="settings-avatar-preview">PP</div>
+                    <div class="settings-avatar-actions">
+                      <label for="settings-avatar-input" class="btn btn-outline"
+                        style="padding: 0.45rem 1rem; font-size: 0.8rem; border-radius: 8px; cursor: pointer;">Change
+                        Avatar</label>
+                      <input type="file" id="settings-avatar-input" accept="image/*" style="display:none;">
+                      <p class="settings-help-text">JPG, PNG or GIF. Max 2MB.</p>
+                    </div>
+                  </div>
+
+                  <div class="settings-inputs-grid">
+                    <div class="input-group">
+                      <label for="settings-full-name">Full Name</label>
+                      <div class="input-wrapper">
+                        <input type="text" id="settings-full-name" value="Preet Patel" required>
+                        <span class="input-glow"></span>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="settings-email">Email Address</label>
+                      <div class="input-wrapper">
+                        <input type="email" id="settings-email" value="preet@marketmind.ai" required>
+                        <span class="input-glow"></span>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label>Account Type / Plan</label>
+                      <div class="settings-plan-badge-wrap">
+                        <span class="settings-plan-badge">🚀 Pro Intelligence Plan</span>
+                        <span class="settings-plan-sub">Active Subscription</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="settings-form-actions">
+                    <button type="submit" class="btn btn-primary btn-glow-purple">
+                      💾 Save Profile Changes
+                    </button>
+                  </div>
+                </form>
+              </section>
+
+              <!-- SECTION 2 — PREFERENCES -->
+              <section class="settings-section-card">
+                <div class="settings-section-header">
+                  <span class="settings-section-icon">🎨</span>
+                  <div>
+                    <h3 class="settings-section-title">Preferences</h3>
+                    <p class="settings-section-sub">Customize your display theme and notification options</p>
+                  </div>
+                </div>
+
+                <form id="settings-preferences-form" class="settings-form-content">
+                  <div class="settings-pref-group">
+                    <label class="settings-pref-label">Interface Theme</label>
+                    <div class="settings-theme-options">
+                      <label class="settings-theme-card active" data-theme="dark">
+                        <input type="radio" name="app-theme" value="dark" checked>
+                        <span class="theme-card-icon">🌙</span>
+                        <span class="theme-card-title">Dark Theme</span>
+                        <span class="theme-card-sub">Cyberpunk Neon Dark</span>
+                      </label>
+                      <label class="settings-theme-card" data-theme="light">
+                        <input type="radio" name="app-theme" value="light">
+                        <span class="theme-card-icon">☀️</span>
+                        <span class="theme-card-title">Light Theme</span>
+                        <span class="theme-card-sub">Clean Light Mode</span>
+                      </label>
+                      <label class="settings-theme-card" data-theme="system">
+                        <input type="radio" name="app-theme" value="system">
+                        <span class="theme-card-icon">💻</span>
+                        <span class="theme-card-title">System Default</span>
+                        <span class="theme-card-sub">Match OS Theme</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="settings-pref-group">
+                    <label class="settings-pref-label">Notifications</label>
+
+                    <div class="settings-toggle-row">
+                      <div class="toggle-info">
+                        <span class="toggle-title">In-App Notifications</span>
+                        <span class="toggle-sub">Receive alerts for completed market scans and trend updates</span>
+                      </div>
+                      <label class="toggle-switch">
+                        <input type="checkbox" id="pref-inapp-notif" checked>
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+
+                    <div class="settings-toggle-row">
+                      <div class="toggle-info">
+                        <span class="toggle-title">Email Notifications</span>
+                        <span class="toggle-sub">Receive weekly market opportunity summaries in your inbox</span>
+                      </div>
+                      <label class="toggle-switch">
+                        <input type="checkbox" id="pref-email-notif" checked>
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="settings-form-actions">
+                    <button type="submit" class="btn btn-primary btn-glow-purple">
+                      💾 Save Preferences
+                    </button>
+                  </div>
+                </form>
+              </section>
+
+              <!-- SECTION 3 — ACCOUNT -->
+              <section class="settings-section-card">
+                <div class="settings-section-header">
+                  <span class="settings-section-icon">💳</span>
+                  <div>
+                    <h3 class="settings-section-title">Account &amp; Plan</h3>
+                    <p class="settings-section-sub">Overview of your plan, membership details, and session</p>
+                  </div>
+                </div>
+
+                <div class="settings-account-grid">
+                  <div class="account-info-box">
+                    <span class="acc-box-label">Current Available Plan</span>
+                    <span class="acc-box-val font-space">Pro Intelligence Tier</span>
+                    <span class="acc-box-sub">Unlimited AI Market Scans + Competitor Intelligence</span>
+                  </div>
+                  <div class="account-info-box">
+                    <span class="acc-box-label">Member Since</span>
+                    <span class="acc-box-val font-space" id="account-member-since">August 2026</span>
+                    <span class="acc-box-sub">Account ID: MM-984210</span>
+                  </div>
+                  <div class="account-info-box">
+                    <span class="acc-box-label">Account Status</span>
+                    <span class="acc-box-val green font-space">🟢 Active</span>
+                    <span class="acc-box-sub">Good Standing</span>
+                  </div>
+                </div>
+
+                <div class="settings-form-actions" style="margin-top: 1.5rem;">
+                  <button type="button" class="btn btn-outline" id="btn-settings-logout">
+                    🚪 Logout from Account
+                  </button>
+                </div>
+              </section>
+
+              <!-- SECTION 4 — SECURITY -->
+              <section class="settings-section-card">
+                <div class="settings-section-header">
+                  <span class="settings-section-icon">🔒</span>
+                  <div>
+                    <h3 class="settings-section-title">Security</h3>
+                    <p class="settings-section-sub">Manage password and account security credentials</p>
+                  </div>
+                </div>
+
+                <form id="settings-security-form" class="settings-form-content">
+                  <div class="settings-inputs-grid">
+                    <div class="input-group">
+                      <label for="settings-curr-pass">Current Password</label>
+                      <div class="input-wrapper">
+                        <input type="password" id="settings-curr-pass" placeholder="••••••••">
+                        <span class="input-glow"></span>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="settings-new-pass">New Password</label>
+                      <div class="input-wrapper">
+                        <input type="password" id="settings-new-pass" placeholder="At least 8 characters">
+                        <span class="input-glow"></span>
+                      </div>
+                    </div>
+
+                    <div class="input-group">
+                      <label for="settings-confirm-pass">Confirm New Password</label>
+                      <div class="input-wrapper">
+                        <input type="password" id="settings-confirm-pass" placeholder="Re-enter new password">
+                        <span class="input-glow"></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="settings-security-meta">
+                    <div class="sec-meta-item">
+                      <span>🛡️ Two-Factor Auth (2FA):</span>
+                      <span class="badge-tag">Disabled</span>
+                    </div>
+                    <div class="sec-meta-item">
+                      <span>💻 Active Sessions:</span>
+                      <span>1 Active Session (Current Browser)</span>
+                    </div>
+                  </div>
+
+                  <div class="settings-form-actions">
+                    <button type="submit" class="btn btn-primary btn-glow-purple">
+                      🔑 Update Password
+                    </button>
+                    <button type="button" class="btn btn-outline" id="btn-settings-logout-sec">
+                      🚪 Logout from Account
+                    </button>
+                  </div>
+                </form>
+              </section>
+
+              <!-- SECTION 5 — DANGER ZONE -->
+              <section class="settings-section-card settings-danger-card">
+                <div class="settings-section-header">
+                  <span class="settings-section-icon danger-icon">⚠️</span>
+                  <div>
+                    <h3 class="settings-section-title" style="color: #ef4444;">Danger Zone</h3>
+                    <p class="settings-section-sub">Irreversible account actions</p>
+                  </div>
+                </div>
+
+                <div class="settings-danger-content">
+                  <div class="danger-info">
+                    <span class="danger-title">Delete Account</span>
+                    <span class="danger-desc">Permanently remove your account, research history, and preferences.</span>
+                  </div>
+                  <button type="button" id="btn-delete-account" class="btn btn-danger">
+                    🗑️ Delete Account
+                  </button>
+                </div>
+              </section>
+
+            </div><!-- /settings-page-container -->
+          </div><!-- /view-settings -->
+
+        </div>
+      </main>
+
+    </div>
+  </section>
+
+  <!-- Success Overlay Dialog -->
+  <div id="processing-success-modal" class="success-overlay-dialog">
+    <div class="success-modal-card">
+      <div class="success-icon-wrap">
+        <svg class="success-checkmark-svg" viewBox="0 0 52 52">
+          <circle class="success-checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+          <path class="success-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+      </div>
+      <h3 class="success-title font-space">Market Analysis Completed Successfully!</h3>
+      <p class="success-subtitle">Redirecting to competitive intelligence canvas...</p>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div id="delete-report-modal" class="success-overlay-dialog" style="display: none;">
+    <div class="success-modal-card delete-modal-card"
+      style="max-width: 440px; padding: 2.2rem; text-align: center; border-color: rgba(239, 68, 68, 0.3); background: rgba(20, 20, 28, 0.95); backdrop-filter: blur(25px);">
+      <div class="delete-icon-wrap"
+        style="width: 56px; height: 56px; border-radius: 16px; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.2rem auto; color: #ef4444;">
+        🗑️
+      </div>
+      <h3 class="font-space" style="font-size: 1.25rem; color: #fff; margin-bottom: 0.6rem;">Delete Saved Report</h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.8rem;">Are you sure
+        you want to delete this report?</p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button type="button" class="btn btn-outline" id="btn-cancel-delete-report"
+          style="flex: 1; padding: 0.75rem 1.2rem; border-radius: 10px; font-size: 0.9rem; cursor: pointer;">Cancel</button>
+        <button type="button" class="btn" id="btn-confirm-delete-report"
+          style="flex: 1; padding: 0.75rem 1.2rem; border-radius: 10px; font-size: 0.9rem; background: #ef4444; color: #fff; border: none; font-weight: 600; cursor: pointer; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);">Delete</button>
+      </div>
+    </div>
+    <!-- Delete Account Confirmation Modal -->
+    <div id="delete-account-modal" class="success-overlay-dialog" style="display: none;">
+      <div class="success-modal-card delete-modal-card"
+        style="max-width: 440px; padding: 2.2rem; text-align: center; border-color: rgba(239, 68, 68, 0.3); background: rgba(20, 20, 28, 0.95); backdrop-filter: blur(25px);">
+        <div class="delete-icon-wrap"
+          style="width: 56px; height: 56px; border-radius: 16px; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1.2rem auto; color: #ef4444;">
+          ⚠️
+        </div>
+        <h3 class="font-space" style="font-size: 1.25rem; color: #fff; margin-bottom: 0.6rem;">Delete Account</h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.8rem;">Are you
+          sure you want to delete your account? This action is permanent and cannot be undone.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <button type="button" class="btn btn-outline" id="btn-cancel-delete-account"
+            style="flex: 1; padding: 0.75rem 1.2rem; border-radius: 10px; font-size: 0.9rem; cursor: pointer;">Cancel</button>
+          <button type="button" class="btn" id="btn-confirm-delete-account"
+            style="flex: 1; padding: 0.75rem 1.2rem; border-radius: 10px; font-size: 0.9rem; background: #ef4444; color: #fff; border: none; font-weight: 600; cursor: pointer; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modern App Logic script -->
+    <script src="app.js?v=12"></script>
+</body>
+
+</html>

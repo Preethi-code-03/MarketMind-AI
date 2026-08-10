@@ -1,0 +1,29 @@
+# Task List - MarketMind AI AI Business Recommendation & Refinements
+
+- `[x]` Update HTML layout in `index.html`
+  - `[x]` Create `#view-recommendation` sub-view container
+  - `[x]` Build the Top Success header elements
+  - `[x]` Build the central Recommendation Grid (Recommended Business card, Opportunity Score dial, and feature cards grid)
+  - `[x]` Build the Estimations Grid (Initial investment, Monthly revenue, Monthly customers, ROI)
+  - `[x]` Build the Next Steps Timeline widget
+  - `[x]` Add the action buttons row
+- `[x]` Style the AI Business Recommendation Screen in `styles.css`
+  - `[x]` Style the main recommendation hero card with gradient glows
+  - `[x]` Design the "Why Choose This?" checklist feature cards with transitions
+  - `[x]` Design the statistic cards grid for financial estimations
+  - `[x]` Design the horizontal timeline layout with responsive connectors and steps
+  - `[x]` Add layout breakpoints for tablet and mobile sizes
+- `[x]` Update JavaScript route handler in `app.js`
+  - `[x]` Modify processing submit timeouts to route to `#view-recommendation` instead of dashboard
+  - `[x]` Set sidebar nav selection indicator to highlight Business Opportunities
+  - `[x]` Implement dynamic business recommendation mapping based on goal card selectors and sliders
+  - `[x]` Add slider-based investment and monthly revenue scaling calculators
+  - `[x]` Wire action buttons: View Report (routes to Overview dashboard) and Restart Analysis (routes to analysis setup page)
+- `[x]` Target Customers Searchable Dropdown
+  - `[x]` Replace single custom select option in `index.html` with a custom searchable dropdown card structure
+  - `[x]` Style custom search wrappers, triggers, hover gradients, options layout, and scrollbars in `styles.css`
+  - `[x]` Implement search text filter input matches, select value synchronizers, and trigger reset callbacks in `app.js`
+- `[x]` Verify local execution
+  - `[x]` Test custom idea input display parameters
+  - `[x]` Test AI recommendation budget constraints
+  - `[x]` Verify timeline wrapping and grid column collapses on mobile sizes
